@@ -1,0 +1,12 @@
+.horizontal-slider li{
+	width:1024px;
+	height:1024px;
+	margin:auto;
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.horizontal-slider{
+	display: inline-block;
+}

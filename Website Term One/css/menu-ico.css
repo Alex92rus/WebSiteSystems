@@ -1,0 +1,55 @@
+/* menu ico */
+#menu-ico
+{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    background: #1a1a1a;
+    transition: all 0.5s ease;
+    
+}
+
+#menu-ico-svg
+{
+    width: 48px;
+    height: 48px;
+
+    cursor: pointer;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+#menu-ico-svg path
+{
+    transition: stroke-dashoffset .5s ease, stroke-dasharray .5s ease;
+
+    fill: none;
+    stroke-width: 12px;
+    stroke-linecap: round;
+    stroke: #eceffe;
+    stroke-dashoffset: -20px;
+}
+
+#menu-ico-svg path#top,
+#menu-ico-svg path#bottom,
+#menu-ico-svg path#middle
+{
+    stroke-dasharray: 100px 300px;
+}
+
+.arrow path#top,
+.arrow path#bottom
+{
+    stroke-dasharray: 45px 300px !important;
+    stroke-dashoffset: -240px;
+}
+
+/* menu ico toggled*/
+#menu-ico.toggled{
+    left:320px;
+    transition: all 0.5s ease;
+}
