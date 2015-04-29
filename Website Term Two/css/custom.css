@@ -1,0 +1,182 @@
+.center{
+	text-align: center;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+body
+{
+    background: url('../images/41.jpg') top right no-repeat;
+    background-attachment: fixed;
+}
+
+div#content-wrapper
+{
+    width: 85%;
+    margin: 0 auto;
+
+    /*border: 1px solid black;*/
+    background: rgba(255,255,255,0.6);
+}
+
+
+header h2#logo-text
+{
+    color: white;
+}
+
+footer{
+	width:85%;
+	margin-left: auto;
+	margin-right: auto;
+}
+footer a
+{
+    color: black;
+}
+
+p.figure-caption{
+	/*color:blue;*/
+	text-align: center;
+}
+
+p.figure-caption:first-letter{
+	font-size: 14px;
+}
+
+.figure-img{
+	width:75%;
+}
+
+#redirect{
+	position: absolute;
+	right: 32px;
+	top: 32px;
+}
+
+.btn-redirect{
+	opacity: 0.6;
+	color:rgb(52, 73, 94);
+	background-color: rgba(236, 240, 241,0.6);
+	line-height: 8px;
+	height: 32px;
+	padding: 6px 12px;
+	border: 1px rgba(155, 89, 182,0.6) dashed;
+	outline:none;
+	font-size: 13px;
+}
+
+.btn-redirect:hover{
+	opacity: 1;
+	color:rgb(52, 73, 94);
+	border: 1px rgba(155, 89, 182,1.0) solid;
+}
+
+
+p:first-letter{
+	font-size: 20px;
+}
+
+table{
+	
+}
+
+table#research-table tr td p:first-letter{
+	font-size: 14px;
+}
+table#research-table tr td{
+	word-break: break-all;
+}
+
+table tr td{
+	text-align: left;
+}
+
+table tr:first-child td{
+	text-align: center;
+}
+
+table tr td:first-child{
+	text-align: center;
+}
+
+table tr th{
+	text-align: center !important;
+	color:white;
+	background: black;
+
+}
+
+table tr td {
+	padding:6px;
+}
+
+table#requirements-table td:last-child{
+	text-align: center;
+	padding: 16px 16px;
+}
+
+table#requirements-table td:last-child ul{
+	text-align: left;
+}
+
+
+table#requirements-table td:nth-child(2){
+	width:60%;
+}
+
+table#team-table tr td:last-child{
+	width:25%;
+}
+table#progress-table tr td:last-child{
+	width:50%;
+}
+
+table#progress-table tr td{
+	text-align: center;
+}
+
+table#heuristics-table td{
+	width: 13%;
+	text-align: center;
+	padding:10px;
+}
+
+
+table#heuristics-table th.longer{
+	width: 25%;
+}
+
+table tr td ul li{
+	line-height: 2em;
+}
+
+.section-description big{
+	font-size:30px;
+}
+
+.section-description{
+	font-size:1.2em;
+}
+
+ul.list-style-circle{
+	list-style-type: circle;
+}
+
+hr {
+	border:0;
+	border-top: 1px solid #767676;
+}
+
+html,body,#wrapper,#page-content-wrapper,#page-content-wrapper header{
+	height:100%;
+}
+

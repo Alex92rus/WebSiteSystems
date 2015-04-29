@@ -1,0 +1,41 @@
+#version-switch{
+	display:table;
+	position: absolute;
+	top:0;
+	left:50%;
+	margin-left:-125px;
+	text-align: center;
+	z-index: 1000;
+}
+
+#version-switch a{
+	display: table-cell;
+	vertical-align: middle;
+	height:33px;
+	width:125px;
+	background-color: rgb(44, 62, 80);
+	outline: none;
+	text-decoration: none;
+	color:#ddd;
+	border:1px #333 solid;
+}	
+
+#version-switch a:first-child{
+	border-right:none;
+	border-bottom-left-radius: 7px;
+}
+
+#version-switch a:first-child:hover{
+	color:white;
+	background-color: rgb(52, 73, 94);
+}
+
+#version-switch a:last-child{
+	border-left: 3px #444 black;
+	border-bottom-right-radius: 7px;
+}
+
+#version-switch a:last-child:hover{
+	color:white;
+	background-color: rgb(52, 73, 94);
+}

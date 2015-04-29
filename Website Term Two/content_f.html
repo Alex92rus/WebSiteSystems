@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Qualcomm PoC Group 8</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/full-width-pics.css" rel="stylesheet">
+        <link href="css/simple-sidebar.css" rel="stylesheet">
+        <link href="css/menu-ico.css" rel="stylesheet">
+        <link href="css/flipper.css" rel="stylesheet">
+        <link href="css/panel.css" rel="stylesheet">
+        <link href="css/version-switch.css" rel="stylesheet">
+        <link href="css/ol-list.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            Team 8: Occupancy Engine
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#div_1" class="menu-item">Product Overview</a>
+                    </li>
+                    <li>
+                        <a href="#div_2" class="menu-item">Requirement Background</a>
+                    </li>
+                    <li>
+                        <a href="#div_3" class="menu-item">Video of Final Product </a>
+                    </li>
+                    <li>
+                        <a href="#div_4" class="menu-item">Architectural Diagrams</a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="#module_4_1" class="menu-item">Database Schema</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#div_5" class="menu-item">The Database and its functionality</a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="#module_5_1" class="menu-item">Plan Introduction and Overview</a></li>
+                            <li><a href="#module_5_2" class="menu-item">Project Team Members Resources</a></li>
+                            <li><a href="#module_5_3" class="menu-item">Development Processes</a></li>
+                            <li><a href="#module_5_4" class="menu-item">General Software Development Activities</a></li>
+                            <li><a href="#module_5_5" class="menu-item">Software Development Processes</a></li>
+                            <li><a href="#module_5_6" class="menu-item">Software Types/Categories</a></li>
+                            <li><a href="#module_5_7" class="menu-item">Detailed Software Development Activities</a></li>
+                            <li><a href="#module_5_8" class="menu-item">Software Configuration Management</a></li>
+                            <li><a href="#module_5_9" class="menu-item">Other Software Development Activities</a></li>
+                            <li><a href="#module_5_10" class="menu-item">Iterations</a></li>
+                            <li><a href="#module_5_11" class="menu-item">System Modules</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#div_6" class="menu-item">System Functionalities</a>
+                    </li>
+                    <li>
+                        <a href="#div_7" class="menu-item">Project Management</a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="#module_7_1" class="menu-item">Requirements Management Plan</a></li>
+                            <li><a href="#module_7_2" class="menu-item">Schedule Control Plan</a></li>
+                            <li><a href="#module_7_3" class="menu-item">Management Plan</a></li>
+                            <li><a href="#module_7_4" class="menu-item">Work Packages</a></li>
+                            <li><a href="#module_7_5" class="menu-item">Configuration Management Plan</a></li>
+                            <li><a href="#module_7_6" class="menu-item">Testing and Quality Assurance Plan</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#div_8" class="menu-item">Citation</a>
+                    </li>
+                    <li>
+                        <a href="#div_9" class="menu-item">Testing</a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="#module_9_1" class="menu-item">Tests</a></li>
+                            <li><a href="#module_9_2" class="menu-item">Test Data</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#div_10" class="menu-item">SDK/Furthur Development</a>
+                    </li>
+                    <li>
+                        <a href="#div_11" class="menu-item">System Manual and User Manual</a>
+                    </li>
+                    <li>
+                        <a href="#div_12" class="menu-item">Community Forum</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            
+            <!-- redirection to another group -->
+            <button type="button" class="btn btn-default btn-lg btn-redirect" id="redirect" onClick="window.location.href='http://students.cs.ucl.ac.uk/2014/group9/content.html'">Team 9: Occupancy Sensors</button>
+            
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <!-- redirection between initial and final report -->
+                <div id="version-switch">
+                    <a href="content.html" id="initial-report-redir">Inital PoC</a>
+                    <a href="" id="final-report-redir">Final PoC</a>
+                </div>
+                
+                <!-- Full Width Image Header with Logo -->
+                <!-- Image backgrounds are set within the full-width-pics.css file. -->
+                <header class="image-bg-fluid-height" id="logo-header">
+                    <img class="img-responsive img-center" src="images/q_logo_f.png" alt="" />
+                </header>
+                <!-- Content Section -->
+                <div id="content-wrapper">
+                    <section id="intro">
+                        <div class="container-fluid" id="div_1">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Product Overview</h1>
+                                    <p class="lead section-lead">Occupancy information for present, past and prediction for future plays important roles in many areas: smart buildings, control and optimization of Heating system, ventilation system, air conditioning (HVAC), Smarter and efficient company organization; Access control optimization, accident prevention and many others. <br><br> The Qualcomm® Occupancy Engine is a cloud based system, intended to accurately quantify presence and movement of people in the rooms of a building based on a data sent from different sensors.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="section-paragraph">
+                                        Main system features are:
+                                        <ul>
+                                            <li>Format and logical validation, analysis and storing of all received data from different sensors</li>
+                                            <li>Collected historical data is used for different queries and analyses – for example calculation of current and past occupancy  and movements  for room, door and building</li>
+                                            <li>Calculating the confidence level of counted occupancy</li>
+                                            <li>Error handling module that performs automatic checks and correct errors procedures.</li>
+                                            <li>Pattern of occupancy at a room and building level is estimated using historical data</li>
+                                            <li> Users communicate with the system through regular browser. User Interface has the following features: <br>
+                                                <ul>
+                                                    <li>Consistent responsive design with  login module and session support, help, contact information and forum section</li>
+                                                    <li>Building plan, showing online current room occupancy of the building  and colour differentiated  crowdedness</li>
+                                                    <li>Set of user parameterised tabular and graph reports</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </p>
+                                    <br>
+                                    <p>Making use of algorithms to analyze and estimate room occupancy in a building using sensor measurements from diverse sources and historical data. Information regarding occupancy levels and distribution patterns of movement in buildings may follow different patterns based on special events or times of the day. The room occupancy may vary seasonally, with time of the day or even days of the weeks and holidays. For example, a living room occupancy pattern is usually higher during the day than during the night.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Content Section -->
+                    <hr>
+                    <div class="container-fluid" id="div_2">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="section-heading">Requiements Background</h1>
+                                <p class="section-paragraph">
+                                    Тhe key requirements to our system are:
+                                    <ul>
+                                        <li>To accurately quantify the number of people in each room of a building</li>
+                                        <li>To calculate the confidence level of the number of people in every room</li>
+                                        <li>To store a historical data for further analyses</li>
+                                        <li>To create an error handling module with automatic checking and correction of the errors</li>
+                                        <li>To have user interface, showing:  <br>
+                                            <ul>
+                                                <li>Current and past number of people in every room</li>
+                                                <li>Confidence level</li>
+                                                <li>Set of different reports </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </p>
+                                <br>
+                                <p>We completed all functionality as planned in our PoC and created some additional features during the process of development. The development plan followed our PoC. We successfully finished all ‘must have’ and ‘should have’ features and partially ‘could have’ and ‘would like to have’, with the opportunity to complete them in future development .
+                                </p>
+                                <table border="1" id="requirements-table">
+                                    <tr>
+                                        <th>PRIORITIES</th>
+                                        <th>FEATURES</th>
+                                        <th>COMPLETED</th>
+                                    </tr>
+                                    <tr>
+                                        <td>MUST HAVE</td>
+                                        <td>
+                                            <ul>
+                                                <li>A system that is able to accurately determine and quantify the number of people in a given location.</li>
+                                                <li>A user interface that admins can interact with to check how many people are currently, or in the past, in a room. This will be in a form of a website.</li>
+                                                <li>An error handling module that copes with hardware detection errors. For example, a case where hardware draws to a conclusion that there are more people leaving the room than there are actually in the room. </li>
+                                                <li>Maintain historic data.</li>
+                                            </ul>
+                                        </td>
+                                        <td>ALL DONE!</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SHOULD HAVE</td>
+                                        <td>
+                                            <ul>
+                                                <li>A colour coding scheme for floor plan map to represent how crowded a room is.</li>
+                                            </ul>
+                                        </td>
+                                        <td>ALL DONE! <br> We also added an edditional functionality connected to the building plan database to show current number of people in every room. </td>
+                                    </tr>
+                                    <tr>
+                                        <td>COULD HAVE</td>
+                                        <td>
+                                            <ul>
+                                                <li>A system that is able to predict, accurately up to a great degree, the number of people in a room at a given time on a given day.</li>
+                                            </ul>
+                                        </td>
+                                        <td>Calculated weekly convex shows occupancy pattern for every weekday and could be used as a base for occupancy prediction.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WOULD LIKE TO HAVE</td>
+                                        <td>
+                                            <ul>
+                                                <li>A system that uses machine learning to predict very accurately the number of people that will be in a room at a given point in the future.</li>
+                                                <li>A system that can, not only count the number of people in a room on the fly, but also predict the number of people at any given time in the future.</li>
+                                                <li>Even better, it can identify the different people in the room.</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ul>
+                                                <li>Historical data collected from sensors in snapshot tables and data from automatic error correction in error correction log table, along with patterns in configuration tables. "Forced rules" and "occupancy level" could serve as an input to inference machine, based on neural network/Markov chains for machine learning.</li>
+                                                <li>Additional types of sensors and methods should be implemented – beacon devices, face recognition video technology etc.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                    <hr>
+                    <div class="container-fluid" id="div_3">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="section-heading">Video of Final Product</h1>
+                                <p class="lead section-lead">The following is our final product demo video. For detailed information about this system, please refer to our <a href="docs/final_report.pdf" download>report</a>.</p>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe  class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/_RUa8rC2EMk" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <hr>
+                    <!-- /.container -->
+                    <div class="container-fluid" id="div_4">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="section-heading">Architectural Diagrams</h1>
+                                <p class="lead section-lead">System architecture overview</p>
+                                <p class="figure-caption"><img src="images/f/image1-16.png" alt="" class="img-responsive img-center figure-img">Figure 4-1 System overview schema</p>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <p>
+                                    Our product is a cloud based system:
+                                    <ul>
+                                        <li>Server side – Microsoft Azure cloud platform</li>
+                                        <li>MySQL database server</li>
+                                        <li>PHP scheduled modules to receive, store and process input data.</li>
+                                        <li>Scheduled procedures for errors handling and convex calculation</li>
+                                        <li>HTTP transfer to collect data send from an Arduino controlled sensors</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    User interface using foundation framework responsive design, HTML5, CSS, JavaScript Modules for:
+                                    <ul>
+                                        <li>Initializing Java module - for set up, database creation, configuration and initial data loading in system parameter tables.</li>
+                                        <li>Java Client side module - Simulator of sending data online from hardware sensors</li>
+                                        <li>PHP module to create and load test samples of historical data</li>
+                                    </ul>
+                                </p>
+                                <p class="section-paragraph">
+                                    We use Github repository with version and source control from where the source code is deployed on Azure and local host staging environment for the product and its iterations.
+                                </p>
+                                <p class="figure-caption">
+                                    <img src="images/f/image2-18.png" alt="" class="img-responsive img-center figure-img">
+                                    Figure 4-2 Use cases for sensor events and data transfer
+                                </p>
+                                <br>
+                                <p class="figure-caption">
+                                    <img src="images/f/image3-20.png" alt="" class="img-responsive img-center figure-img">
+                                    Figure 4-3 Use case for system configuration and user interaction
+                                </p>
+                            </div>
+                        </div>
+                        <!-- .row -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="lead section-lead">The Database schema</p>
+                                <p class="figure-caption">
+                                    <img src="images/f/image4-22.png" alt="" class="img-responsive img-center figure-img">
+                                    Figure 4-4 Database Entity-Relatonship schema
+                                </p>
+                            </div>
+                        </div>
+                        <!-- .row -->
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <p><b>B42Snapshot</b> stores the data that comes directly from the Arduino. It shows the transitions at a given door along with the confidence level, direction sign and timestamp of the event.
+                                </p>
+                                <p><b>BuildingPlan</b> lists all the doors in a building as well as their adjacent rooms. For this model we assume that a door is two sided. The transition is positive when it is from Room1 to Room2 and negative if it is from opposite direction.
+                                </p>
+                                <p><b>CurrentState</b> stores the number of people currently occupied a given room, along with a cumulative confidence level. This table is created to allow faster access to the current state of each room.
+                                </p>
+                                <p><b>RoomOccupancy</b> stores the past data for each room occupancy at a given moment. A parameter time interval is used, for example 1 day, 1 hour or 5 minutes depending on the people movement dynamic and the snapshot will be generated. This database will be updated during a period where there are no activities. For example, very late at night.
+                                </p>
+                                <p><b>OccupancyLevels</b> gives information about the crowdedness of each room. The values vary depending on the area of a room. The occupancy level is associated with a color. The values in Empty, Few, Several, Crowded present an upper bound for the level. Empty is always 0. For example if we have Few – 4, Several – 10, Crowded – 30, and we have green for Empty, yellow for Few, orange for several and red for Crowded and the system shows that there are 14 people in a room, it will have red label.</p>
+                                <p><b>RoomParameters</b> is a system table that specifies various characteristics about the rooms. For example, one can store HVAC (heating regulation and air-conditioning) conditions about every room. Since there systems use a lot of energy, a demand driven control will be essential in minimising the energy consumption. The value parameter represents the number of people that should be in the room for a certain activity to start. The dates show the period that this activity is valid.</p>
+                                <p><b>CheckPresence</b> stores the data that comes directly from the room sensors. It shows the presence (Yes/No) in a given room along with a device number, confidence and timestamp of measurement.</p>
+                                <p><b>Check_WiFi</b> stores the data that comes directly from the Wi-Fi sensors. It shows the number of devices in a given room along with a device number and timestamp of measurement.
+                                CorrectErr stores a correction transitions of error handling module. Structure and fields are same as of b42snapshot.</p>
+                                <p><b>ForcedRules</b> is a table that specifies max and min people limits for the room at agiven period of a given day of week, typeofday (working or holiday), and flag for forcing rule. This is used by scheduled error correction procedure to enforce sets limit.</p>
+                                <p><b>ConvexDefinitions</b> stores the parameters used in building and populating convex and convex_date tables. These parameters are ‘length in weeks in the past’ and ‘interval length to divide days (in seconds)’.</p>
+                                <p><b>Convex_date</b> stores calculated history of a room’s occupancy in the defined weeks in the past in the form of min, max, average values per intervals of a days.</p>
+                                <p><b>Convex</b> stores min, max and the average values of the room’s occupancy calculated per intervals of a weekday.</p>
+                                <p>There are several helper views for facilitating queries and data processing procedures: <b>roommovements</b>, <b>camera_occupants</b> and <b>lastroomoccupancy</b>.</p>
+                                <br>
+                                <p class="figure-caption">
+                                    <img src="images/f/image5-24.png" alt="" class="img-responsive img-center figure-img">
+                                    Figure 4-5 System use diagram
+                                </p>
+                                <br>
+                                <p class="figure-caption">
+                                    <img src="images/f/image6-26.png" alt="" class="img-responsive img-center figure-img">
+                                    Figure 4-6 Data from door sensors transfer diagram
+                                </p>
+                                <br>
+                                <p class="figure-caption">
+                                    <img src="images/f/image7-28.png" alt="" class="img-responsive img-center figure-img">
+                                    Figure 4-7 Data from room sensors transfer diagram
+                                </p>
+                                <br>
+                                <p class="figure-caption">
+                                    <img src="images/f/image8-30.png" alt="" class="img-responsive img-center figure-img">
+                                    Figure 4-8 Data from Wi-Fi sensors transfer diagram
+                                </p>
+                                <br>
+                                <p class="figure-caption">
+                                    <img src="images/f/image9-32.png" alt="" class="img-responsive img-center figure-img">
+                                    Figure 4-9 Convex and weekly convex calculating
+                                </p>
+                                <br>
+                                <p class="figure-caption">
+                                    <img src="images/f/image10-34.png" alt="" class="img-responsive img-center figure-img">
+                                    Figure 4-10 Process of error correction using predefined rules in forcedrules table
+                                </p>
+                                <br>
+                                <p class="figure-caption">
+                                    <img src="images/f/image11-36.jpeg" alt="" class="img-responsive img-center figure-img">
+                                    Figure 4-11 Java Database initialisation Module
+                                </p>
+                                <br>
+                                <p class="figure-caption">
+                                    <img src="images/f/image12-38.gif" alt="" class="img-responsive img-center figure-img">
+                                    Figure 4-12 Java Simulator Module
+                                </p>
+                            </div>
+                        </div>
+                        <!-- .row -->
+                    </div>
+                    <!-- /.container -->
+                    <hr>
+                    <div class="container-fluid" id="div_5">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="section-heading">Development Plan, Iterations and Forks in Prototypes</h1>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <ol class="simple-list">
+                                    <li id="module_5_1">
+                                        <p class="lead section-lead bold">Plan introduction and overview</p>
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <p class="lead section-lead bold">
+                                                    Purpose, scope, and objectives
+                                                </p>
+                                                <p>This Software Development Plan (SDP) establishes the plan for software building, testing, and deployment of the Qualcomm Occupancy Engine System (QOE). The QOE is being developed under the supervision of the Computer Science Department of UCL and under close contact with Qualcomm as a client. Updates to this SDP will address future QOE software upgrades.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p class="lead section-lead bold">
+                                                    System overview, including system and software architecture
+                                                </p>
+                                                <p>In general, an Open source software approach is used including a description of the code, its specific origin, how it is controlled, how it is tested or analyzed.
+                                                </p>
+                                                <p>The Qualcomm Occupancy Engine System involves the development and server deployment of the software modules of web based system:
+                                                    <ul>
+                                                        <li>Server side – Microsoft Azure cloud platform</li>
+                                                        <li>MySQL database server</li>
+                                                        <li>PHP scheduled modules to receive, store and process input data.</li>
+                                                        <li>Scheduled procedures for errors handling and convex calculation</li>
+                                                        <li> HTTP transfer to collect data send from an Arduino controlled sensors</li>
+                                                    </ul>
+                                                </p>
+                                                <p>User interface using foundation framework responsive design, HTML5, CSS, and JavaScript.</p>
+                                                <p>Modules for:
+                                                    <ul>
+                                                        <li>Initializing SQL database module with Java and JSON files - for set up, database creation, configuration and initial data loading in system parameter tables.</li>
+                                                        <li>Java Client side module - Simulator of sending data online from hardware sensors</li>
+                                                        <li>PHP module to create and load test samples of historical data</li>
+                                                    </ul>
+                                                </p>
+                                                <p>Qualcomm Occupancy Engine System is encapsulated and can be easily deployed on different platforms – cloud, Linux/Windows/Mac OS with different WEB servers/Relational Database management systems.</p>
+                                                
+                                            </li>
+                                            <li>
+                                                <p class="lead section-lead bold">
+                                                    System requirements
+                                                </p>
+                                                <p>
+                                                    The project requirements are described in Chapter 3
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        <hr>
+                                    </li>
+                                    <li id="module_5_2">
+                                        <p class="lead section-lead bold">Project team members resources breakdown by responsibility (management, software engineering, testing etc.)</p>
+                                        <table id="team-table" class="table table-hover">
+                                            <tr>
+                                                <td>
+                                                    
+                                                </td>
+                                                <td align="center" valign="center">
+                                                    <b>Primary Role</b>
+                                                </td>
+                                                <td align="center" valign="center">
+                                                    <b>Secondary Role</b>
+                                                </td>
+                                                <td align="center" valign="center">
+                                                    <b>Tertiary Role</b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td align="center" valign="center">
+                                                    <img src="images/aleks.png" style="padding-bottom:6px" />
+                                                    <b>Aleksandar Rusinov</b>
+                                                </td>
+                                                <td align="center" valign="center">
+                                                    <b>Team leader:</b> Manages the delegation of the work in accordance to the skills of the team members. Responsible for group meetings and  meeting deadlines.
+                                                </td>
+                                                <td align="center" valign="center">
+                                                    <b>Client and Supervisor liaison:</b> Chief Client and Supervisor liaison, Makes connection with the client and the UCL supervisors and informs the team members of any changes.
+                                                </td>
+                                                <td align="center" valign="center">
+                                                    <b>Main developer and product manager:</b> In charge of the software development and product management. Main coder and module builder. Designs how the system should act, what simulators should be done and gives ideas how to make the product more attractive.
+                                                </td>
+                                            </tr><tr>
+                                            
+                                            <td align="center" valign="center">
+                                                <img src="images/dzw.png" style="padding-bottom:6px" />
+                                                <b>Dingzhong Weng</b>
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Head of Visual and webpage: </b>Has created the webpage of the project and also made the UML diagrams.
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Minutes and Report Redaction:</b> Vice Report manager. Has to deal and proof check reports and meetings when the head reporter is absent.
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Client Liaison:</b> Vice client and UCL supervisor liaison. Connects with client, UCL supervisor and third party advisor when the chief Liaison is absent
+                                            </td>
+                                        </tr><tr>
+                                        
+                                        <td align="center" valign="center">
+                                            <img src="images/boss.png" style="padding-bottom:6px"   />
+                                            <b>Jetnipat Sarawongsuth</b>
+                                        </td>
+                                        <td align="center" valign="center">
+                                            <b>Chief Editor: </b>Looks after all reports, minutes of meetings and documentation. Reviews the reports and makes redaction.
+                                        </td>
+                                        <td align="center" valign="center">
+                                            <b>Head of Research:</b> Looking after all the researches. Studing different products, communication devices and way of connection with the arduino.
+                                        </td>
+                                        <td align="center" valign="center">
+                                            <b>Testing:</b> Provides means of testing. Gives solutions for simulator tests and code testing coverage.
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr>
+                            </li>
+                            <li id="module_5_3">
+                                <p class="lead section-lead bold">Development (internal) processes, procedures, and work instructions</p>
+                                <p class="module-paragraph">The QOE Project apply an Incremental (Preplanned Product Improvement) strategy with iterations loops to develop and evolve the functional capabilities of the system. The releases of development are created and applied to the GitHub repository and feedback is incorporated in next releases.</p>
+                                <hr>
+                            </li>
+                            <li id="module_5_4">
+                                <p class="lead section-lead bold">Plans for performing general software development activities</p>
+                                <p class="figure-caption">
+                                    <img src="images/f/image13-40.png" alt="" class="img-responsive img-center figure-img">
+                                    Figure 5-1 Development Process Activities diagram
+                                </p>
+                                <hr>
+                            </li>
+                            <li id="module_5_5">
+                                <p class="lead section-lead bold">Software development processes</p>
+                                <p>The Incremental Life Cycle Model has been used to guide the content and format developing the SDP. The allocation of functional requirements for each build was negotiated with the client (Qualcomm) on weekly meetings and documented in the GitHub repository for each build. The SDP integrates reusable software from existing sources with newly-developed software. Software design and coding was performed using an object oriented design approach and generate class and object process interaction diagrams. Artifacts of software development activities was deposited into GitHub repository.</p>
+                                <p>The Test Plan (TP) cases had been prepared and executed as described in the Chapter 9. Software errors uncovered during tests were had been addressed, providing analysis and repair as required.</p>
+                                <hr>
+                            </li>
+                            <li id="module_5_6">
+                                <p class="lead section-lead bold">Software types/categories (i.e., operational software, test software </p>
+                                <p>Development environment consists of local desktop/laptop with installed WEB server (with PHP interpreter – i.e. Apache)/MySql database, Java development environment (i.e. Eclipse), internet access (to pull/push artefacts in GitHub repository), source editors and document editing software (i.e. MS Office).</p>
+                                <p> Production environment is Microsoft Azure cloud platform. </p>
+                                <p> For test environment, we use desktop/laptop with internet connection, standard browser (i.e. IE, Chrome, Mozilla latest version), installed PHP interpreter for Use case tests and Java runtime for the Simulator of sensor data.</p>
+                                <hr>
+                            </li>
+                            <li id="module_5_6">
+                                <p class="lead section-lead bold">Plans for performing detailed software development activities </p>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <p class="lead section-lead bold">Software Development Planning</p>
+                                        <p>The plan for all software development follows software engineering ‘best’ practices. Microsoft Project was used to develop and maintain the QOE Project master plan and schedule. The Project leader had used weekly project meetings to maintain the status of the software project and to resolve any conflicts or changes that might occur.</p>
+                                    </li>
+                                    <li>
+                                        <p class="lead section-lead bold">System Test Planning </p>
+                                        <p>The intent of system test planning is to validate that the system meets its performance requirements. It is the responsibility of the Test Manager to direct the development of system test plans and procedures, and conduct the system tests. Testing is performed to validate each component's ability to meet its stated requirements and to ensure interoperability of the major software components. System qualification testing is prepared to demonstrate to the client that system requirements have been met. It covers the system requirements agreed and written in the system requirements part.</p>
+                                    </li>
+                                </ul>
+                                <hr>
+                            </li>
+                            <li id="module_5_8">
+                                <p class="lead section-lead bold">Software configuration management</p>
+                                <p>We have created script procedures for setting Azure environment, transferring system from GitHub repository and calling modules for the initial database creation and loading. Fully automatic installation and configuration is not provided in this release. Depending on target server system, different procedures are to be created in next releases.</p>
+                                <hr>
+                            </li>
+                            <li id="module_5_9">
+                                <p class="lead section-lead bold">Other software development activities</p>
+                                <p>Here is technical and management approach to coordinating and providing oversight of software development activities undertaken by the QOE Project. Timely technical and management oversight at the appropriate level is necessary to accomplish the activities listed below:
+                                    <ul>
+                                        <li>Track progress against plans</li>
+                                        <li>Identify and resolve problems</li>
+                                        <li>Activities and relationships associated with planning and conducting integration</li>
+                                    </ul>
+                                </p>
+                                <p>Here is to be addressed other related development actions and schedules that could impact QOE Project.</p>
+                                <hr>
+                            </li>
+                            <li id="module_5_10">
+                                <p class="lead section-lead bold"> Iterations made in the project development </p>
+                                <table border="1" style="word-break: break-all;">
+                                    <tr>
+                                        <th>PHASE</th>
+                                        <th>ITERATION</th>
+                                        <th>DESCRIPTION</th>
+                                        <th>ISSUES AND RISK ADDRESSED</th>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">Requirement Phase</td>
+                                        <td class="center">R1</td>
+                                        <td>￼Defines initial product requirements and Software Development Plan</td>
+                                        <td>Develops initial requirements documents for review</td>
+                                    </tr>
+                                    <tr>
+                                        <td>R2</td>
+                                        <td>￼Defines product requirements and Software Development Plan</td>
+                                        <td>Develops realistic Software Development Plans and scope</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">Design phase</td>
+                                        <td class="center">D1</td>
+                                        <td>Complete analysis and design for major use cases. Complete initial design of architecture</td>
+                                        <td>Architecture can be reviewed. <br>High-risk use cases can be reviewed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>D2</td>
+                                        <td>Complete analysis and design for all use cases. Complete prototype of architecture</td>
+                                        <td>Architectural issues clarified <br>Technical risks minimized</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="3">Software development phase</td>
+                                        <td class="center">S1</td>
+                                        <td>Implement skeleton of architecture</td>
+                                        <td>Architecture available for implementors</td>
+                                    </tr>
+                                    <tr>
+                                        <td>S2</td>
+                                        <td>Implement and test high- risk use cases</td>
+                                        <td>High-risk use cases are implemented</td>
+                                    </tr>
+                                    <tr>
+                                        <td>S3 – Develop Alpha release</td>
+                                        <td>Implement and test low- risk use cases. Complete unit/procedure testing</td>
+                                        <td>Defects minimized</td>
+                                    </tr>
+                                    <tr>
+                                        <td>System testing and deployment phase</td>
+                                        <td class="center">T1</td>
+                                        <td>System qualification testing and configuration/ deployment to production site</td>
+                                        <td>Qualcomm Occupancy Engine final product was released</td>
+                                    </tr>
+                                </table>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="container-fluid" id="div_6">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="section-heading">Techncal Achievements, Implementation Details, Use of Design Patterns</h1>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <ol class="tilted-list">
+                                    <li>The Occupancy Engine <b>system receives data sent from different sensors</b> (door sensors, infrared room devices, Wi-Fi devices) using post method in http protocol. After format and logical validation all received data is stored in the database. Process diagrams are shown on Figure 4-6, Figure 4-7 and Fig 4-8. <br> </li>
+                                    <li><b>Quantify the number of people</b> in each room of a selected building, after each transition based on the information coming from different sensors. <br></li>
+                                    <li><b>Calculation of the confidence level</b> of the number of people in every room, based on the confidence, received from the door sensors. The idea is that the combined confidence level for a room is calculated by using all the confidence levels from each of the doors. We calculate this apriori confidence for the particular room using confidence for all doors which are connected to this room with the following formula: number of people who moved through particular door (in both directions) multiplied by the confidence for this door. This is summed for all doors that are connected to the particular room and finally divided by the number of all peoples moved in both directions through these doors. Thus we receive the confidence level for the given room. This is the apriori confidence for the room. When enough historical data is collected, the system can calculate the confidence level for a room using the historical data stored in the system and making the automatic corrections, made from the system for the doors, connected to the same room. <br></li>
+                                    <li><b>Error Handling Module</b> - according to our client requirements, the system needs to be able to make automatic correction of the errors with very minimal human interactions.
+                                        <ul>
+                                            <li>The error checking and correction procedures are executed after every transmission of the data to ensure that any errors or inconsistencies are identified and taken care of right away. After checking the received data, the system automatically makes all necessary error corrections. For example, if the current-state table says that there is negative number of people in the room, the system will make an automatic correction and the negative value will not be stored in the current-state table. However, this does not mean that these inconsistencies and errors are not recorded. They will be recorded in as a historical data that we can use for further analysis. All corrections that are automatically corrected by the system will also be stored in the error corrections log, that way we should gather statistics for the errors and the system could use this data later to update the confidence level automatically if the errors reoccur.</li>
+                                            <li>Another checking procedure is scheduled at pre-set time at night. On the base of information from door sensors and room devices. This procedure checks and compares occupancy in the rooms with the pre-defined set of rules. Using these rules, the system will be able to determine any unusual activities in a room and correct them, tracing back to the entrance/exit of the building using breath first search algorithm and tracking back the transitions from that room all the way to the entrance using calculating path. Later on, when there are enough data for analyses, the system can then create its own set of rules. The system will make an automatic correction by doing a breath first search and tracking back the transitions from that room all the way to the entrance. The process flow diagram is shown on Figure 4-10.</li>
+                                            <li>Checking procedure for errors comparing the room sensor data and the door sensors data – making corrections where certain inconsistencies are found.</li>
+                                            <li>User define set of rules (model) which program to follow when checking for
+                                            errors, to determine whether or not an error needs to be corrected and how it should be corrected. We decided to create rules for the maximum number of people that could be in a certain room at a certain time of the day. These numbers are currently predefined for each room in each building. Later on, the system could create its own set of rules on the base of historical data.</li>
+                                            <li>All automatic error corrections, made by the system, are stored in the correct error log table.</li>
+                                        </ul>
+                                        <p class="figure-caption"><img src="images/f/image14-42.png" alt="" class="img-responsive img-center figure-img"> </p>
+                                        <br>
+                                        <p class="figure-caption"><img src="images/f/image15-44.png" alt="" class="img-responsive img-center figure-img"> </p>
+                                    <br></li>
+                                    <li><b>The room occupancy pattern</b> – the occupancy convex procedure is used to find the pattern of the room occupancy - people presence in each room at certain time intervals. We calculate the minimum, maximum and the average (mean) number of people in each room at a certain period of time (parameter) based on data for 10 weeks(also parameter). Results are stored in a table and may be used for a smart error correction and reports base. Process of convex calculation is shown on Figure 4-9.
+                                        <p class="figure-caption"><img src="images/f/image16-46.png" alt="" class="img-responsive img-center figure-img"> </p>
+                                    <br></li>
+                                    <li>Responsive design User interface with:
+                                        <ol>
+                                            <li>Building plan displays the real time data from the database – current
+                                            number of people in every room of the building</li>
+                                            <li>Reports for:
+                                                <ul>
+                                                    <li>Analyses based on the historical data - current and past occupancy along with presence confidence level, with possibility for the user to select room, door, past period time interval.</li>
+                                                    <li>Reports for occupancy (pattern) convex</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                        <p class="figure-caption"><img src="images/f/image17-48.png" alt="" class="img-responsive img-center figure-img"> Convex- occupancy pattern of presence for a past period</p>
+                                        <p class="figure-caption"><img src="images/f/image18-50.png" alt="" class="img-responsive img-center figure-img"> Occupancy pattern for day of week. Graphical report allows drill down for periods.</p>
+                                    <br></li>
+                                    <li>Java simulator for sending online data from hardware sensors. Door sensors simulator, generates random transitions through different doors in a building. The data, generated from the simulator, is sent to the database and stored in there just the same way as the real sensors would do.<br></li>
+                                    <li>PHP module to create and load test samples of historical data.<br></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                    <hr>
+                    <div class="container-fluid" id="div_7">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="section-heading">Management of the Project Including Work Packages Completed Between the Team Members.</h1>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <ol class="simple-list">
+                                    <li>
+                                        <p class="lead section-lead bold">Requirements Management Plan</p>
+                                        <p>Weekly meetings with client to report the progress and to obtain feedback and comments.</p>
+                                    </li>
+                                    <li>
+                                        <p class="lead section-lead bold">Schedule Control Plan</p>
+                                        <p>Team leader has maintained a summary schedule showing the expected date of each milestone. After every team’s meetings, the team leader re-evaluated the progress of the project to determine whether or not the project is on schedule. If the project was not on schedule, the team leader made consultation with team members to get the project back on track. This resulted in updating the schedule and/or re-evaluating the certain functionalities of the system.</p>
+                                    </li>
+                                    <li>
+                                        <p class="lead section-lead bold">Management plan</p>
+                                        <p class="figure-caption"><img src="images/f/image19-52.tif" alt="" class="img-responsive img-center figure-img"></p>
+                                    </li>
+                                    <li style="text-align:center;">
+                                        <p class="lead section-lead bold " style="text-align:left;">Work packages</p>
+                                        <table border="1" style="width:90%;display:inline-table;">
+                                            <tr>
+                                                <th>N#</th>
+                                                <th>TASKS</th>
+                                                <th>STAGE</th>
+                                                <th>DESCRIPTION</th>
+                                                <th>ASSIGNEE</th>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5">Module 1 – Data initialization</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1.1</td>
+                                                <td>Initializing Java module - for set up, database creation, configuration and initial data loading in system parameter tables.</td>
+                                                <td>Finished and successfully tested. Loaded in GitHub repository.</td>
+                                                <td>Eclipse java project with clear packaged content involving Google Guava libraries, WindowBuilder, Java swing, Junit and MySQL connector</td>
+                                                <td>Aleksandar Rusinov</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1.2</td>
+                                                <td>Java Client side module - Simulator of sending data online from hardware sensors</td>
+                                                <td>Finished and successfully tested. Loaded in GitHub repository.</td>
+                                                <td>Eclipse java project using JSON <br>    simple and Java net. <br> OccupancyStatus.java-API class <br>Simulator.java-simulator core  <br> Triple – utility class <br>Junit test section</td>
+                                                <td>Aleksandar Rusinov</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1.3</td>
+                                                <td>PHP module to create and load test samples of historical data, to populate tables with correct and consistent data.</td>
+                                                <td>Finished and successfully tested. Loaded in GitHub repository.</td>
+                                                <td>fill_csv_file.php <br> t_createroomocc.php</td>
+                                                <td>Aleksandar Rusinov</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5">Module 2 – Data gathering and maintenance</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2.1</td>
+                                                <td>PHP modules to receive and process data from hardware sensors (door, room and WiFi sensors) using HTTP protocol and post/get methods. Format and logical validation of input data.</td>
+                                                <td>Finished and successfully tested. Loaded in GitHub repository.</td>
+                                                <td>add_data.php <br>add_data_array.php <br>add_data_rooms.php <br>add_data_rooms_array.php <br>add_data_wifi.php <br>  add_data_wifi_array.php <br></td>
+                                                <td>Aleksandar Rusinov</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2.2</td>
+                                                <td>Procedure for checking and automatic error corrections, updating currentstate table, and in case of error insert correction record into error_correction log table</td>
+                                                <td>Finished and successfully tested.</td>
+                                                <td>Updatecurrentstate<br>SQL stored procedure executed after every transmission of data</td>
+                                                <td>Aeksandar Rusinov</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5">Module 3 – Procedures and Functions for occupancy calculation</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3.1</td>
+                                                <td>Scheduled procedure to store room occupancy snapshots on a predefined intervals</td>
+                                                <td>Finished and successfully tested. Loaded in GitHub repository.</td>
+                                                <td>store_currentstate.php</td>
+                                                <td>Aleksandar Rusinov</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3.2</td>
+                                                <td> Queries, views, procedures, functions calculating presence and movement for rooms and doors for current and past period</td>
+                                                <td> Finished and successfully tested. Loaded in GitHub repository</td>
+                                                <td>get_convex.php <br> get_currentstate.php <br>get_currentstate_inpast.php <br>get_doors.php <br>get_history_door.php <br>get_history_door_usage.php <br>get_history_room.php <br>get_history_room_usage.php <br>get_occ.php get_rooms.php</td>
+                                                <td>Aleksandar Rusinov, Dingzhong Weng</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3.3</td>
+                                                <td>Calculate convex occupancy for pre- define past period and time intervals</td>
+                                                <td>Finished and successfully tested. Loaded in GitHub repository</td>
+                                                <td>fill_convex.php</td>
+                                                <td>Aleksandar Rusinov</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5">Module 4 – UI and Reports module</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4.1</td>
+                                                <td>Building Plan with real time updates and Occupancy levels</td>
+                                                <td>Done, tested and implemented</td>
+                                                <td>Shockwave flash building plan done with Action Script that interacts with the server API and Shows the current state of the occupancy in the Building</td>
+                                                <td>Dingzhong Weng</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4.2</td>
+                                                <td>Applying Responsive Design to the UI</td>
+                                                <td>Done and implemented</td>
+                                                <td>Using the new Fondations Framework in the web site layout</td>
+                                                <td>Dingzhong Weng</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4.3</td>
+                                                <td>Usage of Ajax with JavaScript to fetch and display data</td>
+                                                <td>Done</td>
+                                                <td>report.js
+                                                    <td>￼
+                                                    Dingzhong Weng</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4.4</td>
+                                                    <td>Site structure</td>
+                                                    <td>Done and implemented, tested menus and layout</td>
+                                                    <td>Dir structure <br>
+                                                    assets <br>fonts <br>forum <br>include <br>layout <br>lib <br>resources <br>views</td></td>
+                                                    <td>￼
+                                                    Dingzhong Weng</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5">Module 5 – Error handling module</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5.1</td>
+                                                    <td>Error handling module reports </td>
+                                                    <td>Finished and successfully tested. Loaded in GitHub repository</td>
+                                                    <td>errorhandling.php <br> report_errors_alldoors.php <br> report_errors_period.php <br> get_history_errors_door.php <br>get_history_error_door_usage.php</td>
+                                                    <td>Aleksandar Rusinov</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5.2</td>
+                                                    <td>Scheduled procedure for automatic error checking and correction</td>
+                                                    <td>Finished and successfully tested. Loaded in GitHub repository</td>
+                                                    <td>checkrules.php <br> drag_occupants.php</td>
+                                                    <td>Aleksandar Rusinov</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5">Module 6 - Testing</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6.1</td>
+                                                    <td>Engine testing with real data from Arduino sensors</td>
+                                                    <td>completed</td>
+                                                    <td>Testings during lab sessions and during trials made by the hardware team</td>
+                                                    <td> Jetnipat Sarawongsuth</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6.2</td>
+                                                    <td>Tests on the base of this emulation: tested error handling module, convex calculation procedure, queries and reports.</td>
+                                                    <td>completed</td>
+                                                    <td>Loaded data for past 10 weeks period, simulating real movement in an office building (about 15000 records in snapshot) <br> Using PHP module for loading of historical data (fill_csv_file.php t_createroomocc.php)</td>
+                                                    <td>Jetnipat Sarawongsuth</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6.3</td>
+                                                    <td>Tests with online simulator - building plan and reports</td>
+                                                    <td>completed</td>
+                                                    <td>Simulator of sending data online from hardware sensors</td>
+                                                    <td>Jetnipat Sarawongsuth</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6.4</td>
+                                                    <td>Java Testing</td>
+                                                    <td>completed</td>
+                                                    <td>Implemented Junit tests in the Java modules</td>
+                                                    <td>Aleksandar Rusinov</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6.5</td>
+                                                    <td>Tests following predefined use cases, sending data from csv files and using real http transfer mechanism</td>
+                                                    <td>completed</td>
+                                                    <td>Test_simulator.php <br> Test_simulator_rooms.php <br> Test_simulator_wifi.php</td>
+                                                    <td>Jetnipat Sarawongsuth</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5">Module 7 - Documentation</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7.1</td>
+                                                    <td>Documentation</td>
+                                                    <td>completed</td>
+                                                    <td>Main Project Documentation <br> Bi- weekly reports <br> Test cases documentation <br> User Manual <br> System Manual</td>
+                                                    <td>Jetnipat Sarawongsuth Aleksandar Rusinov</td>
+                                                </tr>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <p class="lead section-lead bold">Configuration Management Plan</p>
+                                            <p>Configuration Management for software artifacts is handled using GitHub repository with version and source control to provide environment for team collaboration. From GitHub repository iterations of product is deployed on Azure and local host staging environment.</p>
+                                        </li>
+                                        <li>
+                                            <p class="lead section-lead bold">Testing and Quality Assurance Plan</p>
+                                            <p>All deliverables have gone through the appropriate review process. The review is required to ensure that each deliverable is of acceptable quality going through unit and integration tests and control. Appropriate test cases were elaborated and executed.</p>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                    <hr>
+                    <div class="container-fluid" id="div_8">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="section-heading">Referenced Materials Cited And Examples/Trails Made</h1>
+                                
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <table border="1" id="research-table" class="table">
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>RESEARCH DONE</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Aleksandar Rusinov</td>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <p>Read <i>A Survey of Human-Sensing: Methods for Detecting Presence, Count, Location, Track, and Identity about human detection algorithms</i> by Thiago Teixeira, Greshon Dublon, Andreas Savvides</p>
+                                                    <p><a href="http://thiagot.com/papers/teixeira_techrep10_survey_of_human_sensing.pdf">http://thiagot.com/papers/teixeira_techrep10_survey_of_human_sensing.pdf</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>Different analysis software:</p>
+                                                    <p><a href="http://www.predictiveanalyticstoday.com/top-15-predictive-analytics-software/">http://www.predictiveanalyticstoday.com/top-15-predictive-analytics-software/</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>Done research for the UI based on sites – NASDAQ web site</p>
+                                                    <p><a href="http://www.nasdaq.com/symbol/msft/stock-chart?intraday=off&amp;timeframe=10y&amp;splits=off&amp;earnings=off&amp;movingaverage=None&amp;lowerstudy=volume&amp;comparison=off&amp;index=&amp;drilldown=off">http://www.nasdaq.com/symbol/msft/stock-chart?intraday=off&amp;timeframe=10y&amp;splits=off&amp;earnings=off&amp;movingaverage=None&amp;lowerstudy=volume&amp;comparison=off&amp;index=&amp;rilldown=off</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>Google nest</p>
+                                                    <p><a href="https://play.google.com/store/devices/details/Nest_Learning_Thermostat?id=nest_thermostat&amp;hl=en_GB">https://play.google.com/store/devices/details/Nest_Learning_Thermostat?id=nest_thermostat&amp;hl=en_GB</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>Room visitor counter with relay control</p>
+                                                    <p>
+                                                        <a href="http://www.instructables.com/id/Room-Visitor-Counter-with-Relay-Control/">http://www.instructables.com/id/Room-Visitor-Counter-with-Relay-Control/</a>
+                                                        <br><a href="http://www.instructables.com/image/F8E8V6THV9HMBIG">http://www.instructables.com/image/F8E8V6THV9HMBIG</a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>Looked Guava Library</p>
+                                                    <p><a href="https://code.google.com/p/guava-libraries/wiki/ServiceExplained">https://code.google.com/p/guava-libraries/wiki/ServiceExplained</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>JSON service for JAVA</p>
+                                                    <p>
+                                                        <a href="http://www.oracle.com/technetwork/articles/java/json-1973242.html">http://www.oracle.com/technetwork/articles/java/json-1973242.html</a>
+                                                        <br><a href="https://code.google.com/p/json-simple/">https://code.google.com/p/json-simple/</a>
+                                                        <br><a href="http://examples.javacodegeeks.com/core-java/json/java-json-parser-example/">http://examples.javacodegeeks.com/core-java/json/java-json-parser-example/</a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>How to connect arduino with a php server</p>
+                                                    <p><a href="http://www.tweaking4all.com/hardware/arduino/arduino-ethernet-data-push/">http://www.tweaking4all.com/hardware/arduino/arduino-ethernet-data-push/</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>PHP test tools evaluation</p>
+                                                    <p><a href="http://scriptime.blogspot.co.uk/2014/07/performance-test-tools.html">http://scriptime.blogspot.co.uk/2014/07/performance-test-tools.html</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>GrepCode – java code open source search engine</p>
+                                                    <p><a href="http://grepcode.com/">http://grepcode.com/</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>Looked at Hadoop</p>
+                                                    <p>
+                                                        <a href="p://wikibon.org/wiki/v/HBase,_Sqoop,_Flume_and_More:_Apache_Hadoop_Defined">p://wikibon.org/wiki/v/HBase,_Sqoop,_Flume_and_More:_Apache_Hadoop_Defined</a>
+                                                        <br><a href="https://www.youtube.com/watch?v=cA2btTHKPMY">https://www.youtube.com/watch?v=cA2btTHKPMY</a>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dingzhong Weng</td>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <p>Researched in feasibility of beacon technologies such as iBeacon and gimbal </p>
+                                                    <p>
+                                                        <a href="https://developer.apple.com/ibeacon/">https://developer.apple.com/ibeacon/</a>
+                                                        <br><a href="http://www.gimbal.com/">http://www.gimbal.com/</a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>Open source facial recognition library</p>
+                                                    <p><a href="http://openbiometrics.org/">http://openbiometrics.org/</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>Study Java EE 7 Web Application tutorial</p>
+                                                    <p><a href="https://docs.oracle.com/javaee/7/tutorial/index.html">https://docs.oracle.com/javaee/7/tutorial/index.html</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>Read <i>A robust occupancy detection and tracking algorithm for the automatic monitoring and commissioning of a building about human detection algorithms</i> by Huang Chia Shih</p>
+                                                    <p><a href="http://www.sciencedirect.com/science/article/pii/S0378778814002989">http://www.sciencedirect.com/science/article/pii/S0378778814002989</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>Read <i>A Survey of Human-Sensing: Methods for Detecting Presence, Count, Location, Track, and Identity about human detection algorithms</i> by Thiago Teixeira, Greshon Dublon, Andreas Savvides</p>
+                                                    <p><a href="http://www.eng.yale.edu/enalab/publications/human_sensing_enalabWIP.pdf">http://www.eng.yale.edu/enalab/publications/human_sensing_enalabWIP.pdf</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>A look into Hadoop tutorial</p>
+                                                    <p><a href="https://developer.yahoo.com/hadoop/tutorial/">https://developer.yahoo.com/hadoop/tutorial/</a></p>
+                                                </li>
+                                                <li>
+                                                    <p>Study Bootstrap and relating website technologies</p>
+                                                    <p><a href="http://getbootstrap.com">http://getbootstrap.com</a></p>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jetnipat Sarawongsuth</td>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <p>Researched on Java connection to MySQL</p>
+                                                    <p>
+                                                        <a href="http://www.vogella.com/tutorials/MySQLJava/article.html">http://www.vogella.com/tutorials/MySQLJava/article.html</a>
+                                                        <br><a href="http://dev.mysql.com/doc/connector-j/en/connector-j-usagenotes-connect-drivermanager.html">http://dev.mysql.com/doc/connector-j/en/connector-j-usagenotes-connect-drivermanager.html</a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>Researched on Java connection to a database through XAMPP</p>
+                                                    <p>
+                                                        <a href="http://nodehead.com/java-how-to-connect-to-xampps-mysql-in-eclipse/">http://nodehead.com/java-how-to-connect-to-xampps-mysql-in-eclipse/</a>
+                                                        <br><a href="http://codeforgeek.com/2014/07/java-mysql-connectivity-jdbc/">http://codeforgeek.com/2014/07/java-mysql-connectivity-jdbc/</a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>Researched on Creating a web application and running it on a server</p>
+                                                    <p>
+                                                        <a href="http://wiki.jetbrains.net/intellij/Creating_a_simple_Web_application_and_deploying_it_to_Tomcat">http://wiki.jetbrains.net/intellij/Creating_a_simple_Web_application_and_deploying_it_to_Tomcat</a>
+                                                        <br><a href="http://azure.microsoft.com/en-gb/documentation/articles/virtual-machines-java-run-tomcat-application-server/">http://azure.microsoft.com/en-gb/documentation/articles/virtual-machines-java-run-tomcat-application-server/</a>
+                                                        <br><a href="https://www.youtube.com/watch?v=Av6zh817QEc">https://www.youtube.com/watch?v=Av6zh817QEc</a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>Researched on HTML and PHP Languages</p>
+                                                    <p>
+                                                        <a href="http://www.w3schools.com/php/default.asp">http://www.w3schools.com/php/default.asp</a>
+                                                        <br><a href="http://www.w3schools.com/html">http://www.w3schools.com/html</a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>Researched on making PHP connection to a MySQL database and sending and retrieving data from the database</p>
+                                                    <p>
+                                                        <a href="http://webcheatsheet.com/php/connect_mysql_database.php">http://webcheatsheet.com/php/connect_mysql_database.php</a>
+                                                        <br><a href="http://www.w3schools.com/php/php_mysql_connect.asp">http://www.w3schools.com/php/php_mysql_connect.asp</a>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                    <hr>
+                    <div class="container-fluid" id="div_9">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="section-heading">Testing and Evaluation of the Producton Solution</h1>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <ol class="tilted-list">
+                                    <li>We successfully tested with the hardware devices. </li>
+                                    <li>We also made tests following predefined use cases, sending data from csv files and using real http transfer mechanism.</li>
+                                    <li>We made PHP module for loading of historical data for past 10 weeks period, simulating real movement in an office building (about 15000 records in snapshot) to test system performance. On the base of this emulation we tested error handling module, convex calculation procedure, queries and reports.</li>
+                                    <li>We also made online Java simulator to send data from different rooms of a building for testing, evaluation and demo purposes.</li>
+                                </ol>
+                                <p class="lead section-lead center bold">Tests from hardware sensors</p>
+                                <p class="figure-caption"><img src="images/f/image20-54.png" alt="" class="img-responsive img-center figure-img">Test 1.2 Test from room sensors</p>
+                                <br>
+                                <p class="figure-caption"><img src="images/f/image21-56.png" alt="" class="img-responsive img-center figure-img" style="max-width: 50%;"></p>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <h6>For our detailed list of predefined test cases, please refer to our report at page 35.</h6>
+                            </div>
+                            
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                    <hr>
+                    <div class="container-fluid" id="div_10">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="section-heading">SDK/Collaboration Opportunities for Further Development</h1>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                            <div class="col-lg-10 col-lg-offset-1">
+                                <p>The first step is to build an inference machine for machine learning and occupancy prediction (i.e. based on neural network) consuming information from sensors, historical data for the building, correct errors history, a penalty function – based on initial predefined rules and extrapolated from room and Wi-Fi sensors along with error correcting data. To select a suitable approach, historic data might be analysed by “of-the-shelf” workbench for data analysis, data mining, computer learning and predictive modelling – for instance WEKA, ELKI, RapidMiner - just to mention some of available free open source platforms. The second step is to ensure that we have reliable results in an appropriate response time in case of big buildings and huge amount of historical data - by applying scalable decentralized algorithms and/or parallel computing. Here choice of model and platform depends of volume and dynamic of data – Apache Hadoop ￼ family of products look like good first choice for establishing ￼ environment to start with.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container -->
+                    <hr>
+                    <div class="container-fluid" id="div_11">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="section-heading">System Manual and User Manual</h1>
+
+                                <p class="lead section-lead">Download system manual here: <a href="docs/systemmanual.pdf" download>systemmanual.pdf</a>.</p>
+
+                                <p class="lead section-lead">Download user manual here: <a href="docs/usermanual.pdf" download>usermanual.pdf</a>.</p>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                    <hr>
+                    <div class="container-fluid" id="div_12">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h1 class="section-heading">Community Forum</h1>
+                                <p class="lead section-lead">Our forum is here: <a href="http://qualoccupy.freeforums.net/"> Qualcomm Occupancy Engine Forum</a>.</p>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+                <!-- Content wrapper -->
+                <div id="menu-ico">
+<svg id="menu-ico-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<path d="M 30, 70 C 30, 70 110, 70 150, 70 C 170, 70 170, 10  80, 70 C 50,90  20,110  20,110" id="top"></path>
+<path d="M 30,100 L 160,100" id="middle"></path>
+<path d="M 30,130 C 30,130 110,130 150,130 C170,130 170,190  80,130 C 50,110  20, 90  20, 90" id="bottom"></path>
+</svg>
+    </div>
+    <!-- menu icon -->
+    
+</div>
+<!-- /#page-content-wrapper -->
+<footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; <a href="https://www.facebook.com/oasis.weng">Dingzhong Weng</a>, <a href="https://www.facebook.com/aleks.roussinov?fref=ts">Aleksandar Roussinov</a>,<a href="https://www.facebook.com/bosssarawongsuth?fref=ts">Jetnipat Sarawongsuth</a>. This web page is intended for COMP2008 System Engineering 1. Presenting team is <strong>Team 8</strong>. 2014</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </footer>
+    <!-- Footer -->
+</div>
+<!-- #wrapper -->
+<div id="arrow" class="flip-container vertical">
+<div class="flipper">
+    <div class="front">
+        <!-- front content -->
+        <a href="" id="down"><img src="images/arrow.png" alt=""></a>
+    </div>
+    <div class="back">
+        <!-- back content -->
+        <a href="" id="up"><img src="images/arrow_flipped.png" alt=""></a>
+    </div>
+</div>
+</div>
+<!-- arrow -->
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Menu Toggle Script -->
+<script src="js/custom.js"></script>
+<!-- Custom Script -->
+<script src="js/version-switch.js"></script>
+<!-- Version Switch Script -->
+</body>
+</html>

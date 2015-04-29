@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Qualcomm PoC Group 8</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/full-width-pics.css" rel="stylesheet">
+        <link href="css/simple-sidebar.css" rel="stylesheet">
+        <link href="css/menu-ico.css" rel="stylesheet">
+        <link href="css/flipper.css" rel="stylesheet">
+        <link href="css/panel.css" rel="stylesheet">
+        <link href="css/version-switch.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            Team 8: Occupancy Engine
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#div_1" class="menu-item">Background &amp; Overview</a>
+                    </li>
+                    <li>
+                        <a href="#div_team" class="menu-item">Team Description and Organisation</a>
+                    </li>
+                    <li>
+                        <a href="#div_video" class="menu-item">Presentation Video </a>
+                    </li>
+                    <li>
+                        <a href="#div_2" class="menu-item">Project Requirements and Scope</a>
+                    </li>
+                    <li>
+                        <a href="#div_3" class="menu-item">The Database and its functionality</a>
+                    </li>
+                    <li>
+                        <a href="#div_11" class="menu-item">Project Modules Description</a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="#module_1" class="menu-item">Initializing module</a></li>
+                            <li><a href="#module_2" class="menu-item">Data gathering main loop</a></li>
+                            <li><a href="#module_3" class="menu-item">Occupancy core algorithms</a></li>
+                            <li><a href="#module_4" class="menu-item">Queries</a></li>
+                            <li><a href="#module_5" class="menu-item">User interface and reports generation</a></li>
+                            <li><a href="#module_6" class="menu-item">Maintenance and error handling</a></li>
+                        </ul>
+                    </li>
+                   <!--  <li><a href="#module_1" class="menu-item">Initializing module</a></li>
+                    <li><a href="#module_2" class="menu-item">Data gathering main loop</a></li>
+                    <li><a href="#module_3" class="menu-item">Occupancy core algorithms</a></li>
+                    <li><a href="#module_4" class="menu-item">Queries</a></li>
+                    <li><a href="#module_5" class="menu-item">User interface and reports generation</a></li>
+                    <li><a href="#module_6" class="menu-item">Maintenance and error handling</a></li>-->
+                    <li>
+                        <a href="#div_6" class="menu-item">UI Design Analysis</a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="#analysis_1" class="menu-item">Graphic User Interface</a></li>
+                            <li><a href="#analysis_2" class="menu-item">Heuristics Evaluation Report</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#div_5" class="menu-item">Relevant Prototypes Built</a>
+                    </li>
+                    <li>
+                        <a href="#div_7" class="menu-item">Version Control: Git repository</a>
+                    </li>
+                    <li>
+                        <a href="#div_8" class="menu-item">Initial Test Strategies</a>
+                    </li>
+                     <li>
+                        <a href="#div_4" class="menu-item">Research</a>
+                    </li>
+                    <li>
+                        <a href="#div_9" class="menu-item">Progress Record</a>
+                    </li>
+                    <li>
+                        <a href="#div_10" class="menu-item">Term 2 Development Schedule</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            
+            <!-- redirection to another group -->
+            <button type="button" class="btn btn-default btn-lg btn-redirect" id="redirect" onClick="window.location.href='http://students.cs.ucl.ac.uk/2014/group9/content.html'">Team 9: Occupancy Sensors</button>
+
+            <!-- redirection between initial and final report -->
+            <div id="version-switch">
+                <a href="" id="initial-report-redir">Inital PoC</a>
+                <a href="content_f.html" id="final-report-redir">Final PoC</a>
+            </div>
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <!-- Full Width Image Header with Logo -->
+                <!-- Image backgrounds are set within the full-width-pics.css file. -->
+                <header class="image-bg-fluid-height">
+                    <img class="img-responsive img-center" src="images/q_logo.png" alt="">
+                </header>
+                <!-- Content Section -->
+                <div id="content-wrapper">
+                    <section id="intro">
+                        <div class="container-fluid" id="div_1">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Background &amp; Overview</h1>
+                                    <p class="lead section-lead">Human presence detection plays a vital role in many industries nowadays and it has always been a challenge. Different approaches were introduced. From PIR sensors to security camera, these solutions prove much of their reliability and do a great job in many situations, but most of them do not address the issue that our system try to solve.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="section-paragraph"><big>T</big>his year, we are luckily tasked by Qualcomm to design a smart-location occupancy system, which is capable of figuring out human presence with details in a given region, based on information coming from all kinds of sensors.The details of presence include number of people and directions of human movements.<br><br>
+                                    <big>Q</big>ualcomm is world leader in the new spectrum of the wireless technologies.It creates a wide range of commercial devices like Snapdragon processors and provides solutions that enchance the wireless communications, such as hyper dense cells. It also aquires and sells subisidiaries that have more narrow field. For example in November 2012 a developer of ultrasound technologies and gesture recognition -  EPOS  Development, Ltd. was partly aquired by Qualcomm.<br><br>
+                                    <big>T</big>he designed system stores collected data into cloud-based database and provides a comprehensive, well-designed user interface, that meets all of client needs. Historical data stored can be further used for prediction analysis that are helpful in a variety of addtional circumstances. Another functionality our system  should provide is the current occupancy level of each location.<br><br><big>B</big>y visualising all of these collected data in our user interface, it allows greater control over the system's monitored locations for our customer. For example, it will help aid user’s decision making in the case such as queue management in a coffee shop; and it might also provide useful information in terms of queue length and queue time.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Content Section -->
+                    <div class="container-fluid" id="div_team">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Team Description and Organisation</h1>
+                                    <h2>Team description</h2>
+                                    <br>
+                                    <p>Defining a proper work delegation in accordance to the members skills is very crucial factor in the success of a project. Doing that we managed to figure the main strenghts of each team member. Substitutional roles are also of great importance since a project depends on deadlines and meetingswith different parties. Everyone worked in various areas but in this table we outline only the vital roles for each person.
+                                    </p>
+                                    <br>
+                                    <table border="1" id="team-table">
+                                        
+                                        <tr>
+                                            
+                                            <td>
+                                                
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Primary Role</b>
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Secondary Role</b>
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Tertiary Role</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            
+                                            <td align="center" valign="center">
+                                                <img src="images/aleks.png" />
+                                                Aleksandar Rusinov
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Team leader:</b> Manages the delegation of the work in accordance to the skills of the team members. Responsible for group meetings and  meeting deadlines.
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Client and Supervisor liaison:</b> Chief Client and Supervisor liaison, Makes connection with the client and the UCL supervisors and informs the team members of any changes.
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Main developer and product manager:</b> In charge of the software development and product management. Main coder and module builder. Designs how the system should act, what simulators should be done and gives ideas how to make the product more attractive.
+                                            </td>
+                                        </tr><tr>
+                                            
+                                            <td align="center" valign="center">
+                                                <img src="images/dzw.png" />
+                                                Dingzhong Weng
+                                            </td>
+                                            <td align="center" valign="center">
+                                                 <b>Head of Visual and webpage: </b>Has created the webpage of the project and also made the UML diagrams.
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Minutes and Report Redaction:</b> Vice Report manager. Has to deal and proof check reports and meetings when the head reporter is absent.
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Client Liaison:</b> Vice client and UCL supervisor liaison. Connects with client, UCL supervisor and third party advisor when the chief Liaison is absent
+                                            </td>
+                                        </tr><tr>
+                                            
+                                            <td align="center" valign="center">
+                                                <img src="images/boss.png" />
+                                                Jetnipat Sarawongsuth
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Chief Editor: </b>Looks after all reports, minutes of meetings and documentation. Reviews the reports and makes redaction. 
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Head of Research:</b> Looking after all the researches. Studing different products, communication devices and way of connection with the arduino.
+                                            </td>
+                                            <td align="center" valign="center">
+                                                <b>Testing:</b> Provides means of testing. Gives solutions for simulator tests and code testing coverage.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <br>
+                                    <h2>Internal organisation</h2>
+                                    <br>
+                                    <p>The internal communication was realised trough Facebook, Google Drive and Hang outs. To coordinate our research and activities with the other group we created a common Facebook group. Furthermore all the research realised by any member of our team would be synchronised on a special drive folder.<br>
+                                    
+                                    Meeting wise we would have a Skype at least once every two week with our clients keeping them updated of our progress. Furthermore we made internal meetings at least twice a week to discuss and plan.</p>
+                                    <p class="lead section-lead"></p>
+                                    
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                    <hr>
+                    <section id="details" style="padding-top:0px;">
+                        <div class="container-fluid" id="div_video">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Presentation Video</h1>
+                                    <p class="lead section-lead">The following is our project introductory video. It summarises our current work and explains briefly about each components of the system. For detailed information about this system, please refer to our <a href="docs/Occupancy predictive engine report.pdf" download>report</a>.</p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe  class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/gI1GYZRFFKU" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <hr>
+                        <!-- /.container -->
+                        <div class="container-fluid" id="div_2">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Project Requirements and Scope</h1>
+                                    <p class="lead section-lead">We carefully summarise all of client requirements and categorises them according to their urgency and importance to this project.</p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <table border="1" id="requirements-table">
+                                        <tr>
+                                            <th>PRIORITIES</th>
+                                            <th>FEATURES</th>
+                                        </tr>
+                                        <tr>
+                                            <td>MUST HAVE</td>
+                                            <td>
+                                                <ul>
+                                                    <li>A system that is able to accurately determine and quantify the number of people in a given location.</li>
+                                                    <li>A user interface that admins can interact with to check how many people are currently, or in the past, in a room. This will be in a form of a website.</li>
+                                                    <li>An error handling module that copes with hardware detection errors. For example, a case where hardware draws to a conclusion that there are more people leaving the room than there are actually in the room. </li>
+                                                    <li>Maintain historic data.</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>SHOULD HAVE</td>
+                                            <td>
+                                                <ul>
+                                                    <li>A colour coding scheme for floor plan map to represent how crowded a room is.</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>COULD HAVE</td>
+                                            <td>
+                                                <ul>
+                                                    <li>A system that is able to predict, accurately up to a great degree, the number of people in a room at a given time on a given day.</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>WOULD LIKE TO HAVE</td>
+                                            <td>
+                                                <ul>
+                                                    <li>A system that uses machine learning to predict very accurately the number of people that will be in a room at a given point in the future.</li>
+                                                    <li>A system that can, not only count the number of people in a room on the fly, but also predict the number of people at any given time in the future.</li>
+                                                    <li>Even better, it can identify the different people in the room.</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <hr>
+                        <!-- /.container -->
+                        <div class="container-fluid" id="div_3">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">The Database and its functionality</h1>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-10 col-lg-offset-1">
+                                        <p class="lead section-lead center bold">Database Structure</p>
+                                        <img src="images/database.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="section-paragraph"><strong>EventSnapshot</strong> stores the data that comes directly from the Arduino. It shows the transition at a given the door and the time when the transition happens. We aim to pull this information from the Arduino when there is a physical transition of people walking through a door.<br><br><strong>Building plan</strong> lists all the doors in a building as well as their adjacent rooms. For this model we assume that a door is two sided. The transition is positive when it is from Room1 to Room2 and negative if it is from opposite direction.<br><br><strong>Current state</strong> will store the number of people currently occupied in a given room. This database is created to allow faster access to the state of each room.<br><br><strong>RoomOccupancy</strong> stores the past data for each room.  A fixed time interval will be used, for example 1 day, 1 hour or 5 minutes depending on the people movement dynamic and the snapshot will be generated. This database will be updated during a period where there are no activities. For example, very late at night.<br><br><strong>QmSystemParameters</strong> is the general table for various parameters of the system. For example, we can store the time interval for saving the occupancy in RoomOccupancy table with code RSavePeriod.<br><br><strong>OccupancyLevels</strong>  gives information about the crowdedness of each room. The values vary depending on the area of a room.  The occupancy level might be associated with a color. The values in Empty, Few, Several, Crowded present an upper bound for the level. Empty is always 0. For example if we have Few – 4, Several – 10, Crowded – 30, and we have green for Empty, yellow for Few, orange  for several and red for Crowded and the system shows that there are 14 people in a room, it will have red label.  Another way to show the occupancy to the use colour coding with addition of small RGB step when there is change of occupancy. For example it might change from – pure green – 0, 255, 0 - when empty to pure red – 255, 0, 0 - when 10 people are in the room with a (25.5, -25.5, 0) RGB step per person.<br><br><strong>ConfigRoomLimits</strong>  specifies various characteristics about the rooms. For example, one can store HVAC (heating regulation and air-conditioning) conditions about every room. Since that is a major energy consumer for buildings a demand driven control will be of essential value. The value parameter represents the number of people that should be in the room for a certain activity to start. The dates show the period that this activity is valid. Some limits might be done by a predictive engine and take action in the future.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.container -->
+                        <hr>
+                        <div class="container-fluid" id="div_11">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Project Modules Description</h1>
+                                    <p class="lead section-lead">This section talks about 6 core modules our prototypes consist of. These modules may remove or evolve as the project develops.</p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <ul class="list-unstyled">
+                                       <div id="module_1">
+                                            <li>
+                                                <p class="lead section-lead bold">Initializing module:</p>
+                                                <p class="module-paragraph">During the early period of development, we figured out that the occupancy engine needs some plan of the buildings, identification of doors, rooms and buildings. In the initial java mockup, we took the building structure data from a JSON file and made the building location structure based on it. The second approach put this data into a table called BuildingPlan. The snapshot table that receives all the relevant data from the sensors, the table with the system values, current state and room occupancy has to be made for each building present.</p>
+                                                <hr>
+                                            </li>
+                                        </div>
+                                        <li id="module_2">
+                                            <p class="lead section-lead bold">Data gathering main loop:</p>
+                                            <p class="module-paragraph">This module will receive the data from the Arduino (For now, in the form of http request) – DoorID, transition, confidence, time of the event and make a connection to the database inserting them in a row into the  EventSnapshot table.  For now this approach can be seen in our PHP mockup model – handling requests from the simulator and ones done manually.</p>
+                                            <hr>
+                                        </li>
+                                        <li id="module_3">
+                                            <p class="lead section-lead bold">Occupancy core algorithms:</p>
+                                            <p class="module-paragraph">This part deals with the filling of the RoomOccupancy and CurrentState table. This are set of functions – MySQL queries that will analyse the data in the EventSnapshot table and make judgment about how many people are there in a room for a given time. For example, if you want to find out how many people were in a room two days ago all the transitions in the snapshot table that consider this room will be selected and then the summation aggregation, just like on figure two, will be made .  The currentTime  table will be updated once over a small period of time – say 5 minutes and it will consider the new rows present in the EventSnapshot table. Another way is to update a table every time we receive new information in the Eventsnapshot table.</p>
+                                            <hr>
+                                        </li>
+                                        <li id="module_4">
+                                            <p class="lead section-lead bold">Queries:</p>
+                                            <p class="module-paragraph">
+                                            <ol>
+                                                <li>Current number of people in every room</li>
+                                                <li>Number of people in rooms for the selected previous date and time</li>
+                                                <li>Number of people moving through selected door/doors for the selected period of time</li>
+                                                <li>Order the doors by people moving through for the selected period of time</li>
+                                                <li>Find the doors with most/least  number of people going through</li>
+                                                <li>Find  the  day/(time period) with the most/least people in the selected room </li>
+                                                <li>Find  the  day/(time period) with the most/least people  moved through the selected room</li>
+                                                <li>Find the room/rooms where the most/least people are moving</li>
+                                            </ol>
+                                            </p>
+                                            <hr>
+                                        </li>
+                                        <li id="module_5">
+                                            <p class="lead section-lead bold">User interface and reports generation:</p>
+                                            <p class="module-paragraph">The user interface follows the model outlined in the chapter “Development of the user interface”. The screens with the report table generation will use the query power of MySQL.</p>
+                                            <hr>
+                                        </li>
+                                        <li id="module_6">
+                                            <p class="lead section-lead bold">Maintenance and error handling: </p>
+                                            <p class="module-paragraph">In this part of the system we have to create error handling procedures. For the purpose of dealing with errors arising from the fault of the sensors/Arduinos/Server/Power/network failures, etc. we have to create modules for scanning inconsistencies in the input data and coming up with a solution on how to overcome the problem. <br>
+                                            <ol>
+                                                <li>Error checking procedures: <br>
+                                                    <ul class="list-style-circle">
+                                                        <li>Check for too low probability percent ( repeating  from the same DoorID) – at predefined interval execute check procedure for repeating low probability data, for the same door</li>
+                                                        <li>Check for incorrect/impossible values (negative number of people in room) - with trigger on table for current number of people in every room (table CurrentState). On update, this trigger checks for negative value.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Procedure for clarify the real situation (ground truth) – the real number of people in the rooms.</li>
+                                                <li>Error correcting procedures: by adding transactions to correct errors. – We may add a field “correction” in snapshot table where to mark the records from correction. They have to be inserted with the same date and time as the wrong ones.  A consistent manual correction has to be done in the table for storing the number of people in every room, and in the table for current state of people number in the rooms.</li>
+                                            </ol>
+                                            <br> Additional checks may be performed - for example unusual high movement in off working time to compare computed occupancy with predefined table with fields [RoomID], [DayOfWeek], [TypeOfDay], [30min_period_of_day], [MinOccupants], [MaxOccupants], [MustBeForced]. This table could be filled manually in initial stages.  After gathering enough data (For example, after 5 years)  the table may be filled  using procedure with real data.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container -->
+                        <hr>
+                        <div class="container-fluid" id="div_6">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">UI Design Analysis</h1>
+                                    <p class="lead section-lead">The following pictures demonstrate what our user interface will potentially look like.</p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row" id="analysis_1">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="lead section-lead bold">Graphic User Interface Overview: </p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-5 col-lg-offset-1 vcenter">
+                                        <img src="images/w1.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                    <div class="col-lg-offset-1 col-lg-3 vcenter section-description">
+                                        <p><big>T</big>his screen contains a login form that grants admins access to the system by entering their pre-allocated login credentials. It is intended to include a interactive background (demo image is just an example.) The logo on the upper left corner is subject to change in accordance with the company using this system  . </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="col-lg-10 col-lg-offset-1">
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-5 col-lg-offset-1 vcenter enlagre-pict">
+                                       <img src="images/w2.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                    <div class="col-lg-offset-1 col-lg-3 vcenter section-description ">
+                                        <p><big>T</big>his screen contains all of the available locations. In this case, it gives user options to select different buildings monitored. There is a navigation panel on the left which displays the name of each building. When a user selects a building in the panel, an image of the corresponding location is displayed. In that case, a dinosaur in National History Museum. The inspect button will take the user to the analysis webpage about the place.</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <hr class="col-lg-10 col-lg-offset-1">
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-5 col-lg-offset-1 vcenter">
+                                        <img src="images/w3.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                    <div class="col-lg-offset-1 col-lg-3 vcenter section-description">
+                                        <p><big>T</big>his screen shows current state of a floor (or a part) of the building. You can navigate through different floors from the left menu. A floor plan in the center of the demo screen is interactive and the number in each room shows the current number of people there. </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <hr class="col-lg-10 col-lg-offset-1">
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-5 col-lg-offset-1 vcenter">
+                                        <img src="images/w4.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                    <div class="col-lg-offset-1 col-lg-3 vcenter section-description">
+                                        <p><big>T</big>his information changes dynamically and different coloring is applied when the room is selected or an error occurs. Once selected from the menu or directly on the map, the user can proceed to view its details by clicking it again.</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <hr class="col-lg-10 col-lg-offset-1">
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-5 col-lg-offset-1 vcenter">
+                                        <img src="images/w5.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                    <div class="col-lg-offset-1 col-lg-3 vcenter section-description">
+                                        <p><big>T</big>his screen gives the user an option to select a period between which the occupancy data should be displayed. User can utilize calendar for easier date selection. This calendar is specially made to indicate whether a day is a holiday or a weekend.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="col-lg-10 col-lg-offset-1">
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-5 col-lg-offset-1 vcenter">
+                                        <img src="images/w6.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                    <div class="col-lg-offset-1 col-lg-3 vcenter section-description">
+                                        <p><big>T</big>his screen provides a visualisation of occupancy data in a line chart. There are options in surrounding tabs that can specify precision and time period. The ideas about UI here and on the next screen are influenced by the way stock price change is represented in http://www.nasdaq.com/ </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <hr class="col-lg-10 col-lg-offset-1">
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-5 col-lg-offset-1 vcenter">
+                                        <img src="images/w7.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                    <div class="col-lg-offset-1 col-lg-3 vcenter section-description">
+                                        <p><big>T</big>his screen has the same functionality as the previous one however the data is presented in a table.</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <hr class="col-lg-10 col-lg-offset-1">
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-5 col-lg-offset-1 vcenter">
+                                        <img src="images/w8.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                    <div class="col-lg-offset-1 col-lg-3 vcenter section-description">
+                                        <p><big>T</big>his gives an indication to the user on how crowded a room is currently. The value of maximum capacity is chosen differently but arbitrarily depending on the relative size of each room. This particular feature can be very useful in giving the user more comprehensive information on how long a queue to a park ride is or how crowded a toilet is. </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <hr class="col-lg-10 col-lg-offset-1">
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-5 col-lg-offset-1 vcenter">
+                                        <img src="images/w9.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                    <div class="col-lg-offset-1 col-lg-3 vcenter section-description">
+                                        <p><big>T</big>his is a table view that shows the current crowdedness index for all the rooms monitored. It simply offers an overview for all the rooms so that admins can assess these rooms at once. </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <hr class="col-lg-10 col-lg-offset-1">
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-5 col-lg-offset-1 vcenter">
+                                        <img src="images/w10.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                    <div class="col-lg-offset-1 col-lg-3 vcenter section-description">
+                                        <p><big>T</big>his is a more detailed table view that shows the flow of people entering and exiting each room and how it changes over time. In the example screen, it shows how many people enter or exit a room with 3 doors over a selected period of time. One can see that Door 1 and Door 3 are more regularly used than Door 2. This might be useful in planning the most attractive route around a place such as a museum or a large car showroom.</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <hr class="col-lg-10 col-lg-offset-1">
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-5 col-lg-offset-1 vcenter">
+                                        <img src="images/w11.png" alt="" class="img-responsive img-center">
+                                    </div>
+                                    <div class="col-lg-offset-1 col-lg-3 vcenter section-description">
+                                        <p><big>T</big>his is again a more elaborative option. It shows how much a door is used and in what time. This may be useful for planning door extension in the future. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row" id="analysis_2">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <hr>
+                                    <p class="lead section-lead bold">Heurisitics Evaluation Report: </p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <table border="1" id="heuristics-table">
+                                        <tr>
+                                            <th>Interface</th>
+                                            <th class="longer">Issue</th>
+                                            <th>Heuristic(s) *</th>
+                                            <th>Frequency ** <br>0 (rare)  to 4 (common)</th>
+                                            <th>Impact ** <br>0 (easy) to difficult (4)</th>
+                                            <th>Persistence ** <br>0 (once) to 4 (repeated)</th>
+                                            <th>Severity ***<br>= Sum Total of F+I+P /3</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Login Screen</td>
+                                            <td>Invalid details provided</td>
+                                            <td>5,9</td>
+                                            <td>2</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location Options <br>Screen</td>
+                                            <td>Inconsistency between “option” and “building”</td>
+                                            <td>4</td>
+                                            <td>3</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Occupancy Map <br>Screen</td>
+                                            <td>No explicit sign that the map is interactive</td>
+                                            <td>4,7</td>
+                                            <td>4</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Occupation Analysis <br>Screen</td>
+                                            <td>Shortened names for day – “D”, week “W” and Month – “M” may cause confusion</td>
+                                            <td>4,7</td>
+                                            <td>2</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Occupation Reports <br>Screens</td>
+                                            <td>Not that attractive to users</td>
+                                            <td>8</td>
+                                            <td>3</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-9 col-lg-offset-1">
+                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-info">
+                                            <div class="panel-heading" role="tab" id="headingOne">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onClick="if (this.innerHTML=='Click here to view footnotes'){this.innerHTML='Click here to hide footnotes';}else{this.innerHTML='Click here to view footnotes';}">Click here to view footnotes</a>
+                                            </div>
+                                            <!-- /.panel-heading -->
+                                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                <div class="panel-body">
+                                                    <p>* Heurisitcs in this report are </p>
+                                                    <ol>
+                                                        <li>
+                                                            <span class="bold">Visibility of system status</span>
+                                                            <ul>
+                                                                <li>The system should always keep users informed about what is going on, through appropriate feedback within reasonable time.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <span class="bold">Match between system and the real world</span>
+                                                            <ul>
+                                                                <li>The system should speak the users' language, with words, phrases and concepts familiar to the user, rather than system-oriented terms. Follow real-world conventions, making information appear in a natural and logical order.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <span class="bold">User control and freedom</span>
+                                                            <ul>
+                                                                <li>Users often choose system functions by mistake and will need a clearly marked "emergency exit" to leave the unwanted state without having to go through an extended dialogue. Support undo and redo.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <span class="bold">Consistency and standards</span>
+                                                            <ul>
+                                                                <li>Users should not have to wonder whether different words, situations, or actions mean the same thing. Follow platform conventions.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <span class="bold">Error prevention</span>
+                                                            <ul>
+                                                                <li>Even better than good error messages is a careful design which prevents a problem from occurring in the first place. Either eliminate error- prone conditions or check for them and present users with a confirmation option before they commit to the action.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <span class="bold">Recognition rather than recall</span>
+                                                            <ul>
+                                                                <li>Minimize the user's memory load by making objects, actions, and options visible. The user should not have to remember information from one part of the dialogue to another. Instructions for use of the system should be visible or easily retrievable whenever appropriate.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <span class="bold">Flexibility and efficiency of use</span>
+                                                            <ul>
+                                                                <li>Accelerators -- unseen by the novice user -- may often speed up the interaction for the expert user such that the system can cater to both inexperienced and experienced users. Allow users to tailor frequent actions.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <span class="bold">Aesthetic and minimalist design</span>
+                                                            <ul>
+                                                                <li>Dialogues should not contain information which is irrelevant or rarely needed. Every extra unit of information in a dialogue competes with the relevant units of information and diminishes their relative visibility.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <span class="bold">Help users recognize, diagnose, and recover from errors</span>
+                                                            <ul>
+                                                                <li>Error messages should be expressed in plain language (no codes), precisely indicate the problem, and constructively suggest a solution.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <span class="bold">Help and documentation</span>
+                                                            <ul>
+                                                                <li>Even though it is better if the system can be used without documentation, it may be necessary to provide help and documentation. Any such information should be easy to search, focused on the user's task, list concrete steps to be carried out, and not be too large.</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ol>
+                                                    <!-- /.* -->
+                                                    <p>** The <span class="bold">severity</span> of a usability problem is a combination of three factors: <br>
+                                                    <ul>
+                                                        <li>The <span class="bold">frequency</span> with which the problem occurs: Is it common</li>
+                                                        <li>The <span class="bold">impact</span> of the problem if it occurs: Will it be easy or difficult for the users</li>
+                                                        <li>The <span class="bold">persistence</span> of the problem: Is it a one-time problem that users can overcome once they know about it or will users repeatedly be the problem?</li>
+                                                    </ul>
+                                                    </p>
+                                                    <!-- /.** -->
+                                                    <p>*** The following 0 to 4 rating scale can be used to rate the severity of usability problems: <br>
+                                                    <ul style="list-style:none;">
+                                                        <li>0 = <span class="bold">I don't agree</span> that this is a usability problem at all</li>
+                                                        <li>1 = <span class="bold">Cosmetic problem only</span>: need not be fixed unless extra time is available on project</li>
+                                                        <li>2 = <span class="bold">Minor usability problem</span>: fixing this should be given low priority</li>
+                                                        <li>3 = <span class="bold">Major usability problem</span>: important to fix, so should be given high priority</li>
+                                                        <li>4 = <span class="bold">Usability catastrophe</span>: imperative to fix this before product can be released</li>
+                                                    </ul>
+                                                    </p>
+                                                    <!-- /.*** -->
+                                                </div>
+                                                <!-- /.panel-body -->
+                                            </div>
+                                            <!-- /.collapseOne -->
+                                        </div>
+                                    </div>
+                                    <!-- /.panel -->
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container -->
+                        
+                        <div class="container-fluid" id="div_5">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Relevant Prototypes Built</h1>
+                                    <p class="lead section-lead">During term 1, we managed to build and test two prototypes and to design a UI prototype that will be finished by the end of term 2.</p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="lead section-lead center bold">Java Prototype</p>
+                                    <p class="section-paragraph"><big>W</big>e started off by developing TDD-based Java application as all the team members are most familiar with Java. We devoted our time to experiment with it and made step by step progress, to include various features. First we made classes for the Rooms, Doors and Location Structure – the floor plan we operate with. After that JSON was used to initialize an example building plan. We also created classes that connect our Java program to MySQL database. We carefully designed its structure and tested it by inserting raw data into it. The style of code mostly abides to the Google Java Style rules.</p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="lead section-lead center bold">Java Prototype Class Diagram</p> 
+                                    <p class="section-paragraph center bold">We used ObjectAid in Eclipse IDE and Powerpoint when creating the following class diagram.</p>
+                                    <img src="images/UML_Final.jpg" alt="" class="img-responsive img-center">
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="lead section-lead center bold">PHP prototype</p>
+                                    <p class="section-paragraph"><big>A</big>fter realising that our Java prototype will be time consuming in getting it to work as it requires a virtual machine to run on and setting one up is not feasible under the current timeframe, we decided that the best course of action for our group in order to move forward was to use PHP to deal with data and storage. We chose PHP for its simplicity to implement and that it can be easily integrated into an HTML website that we are working on for the user interface design. Another reason to use PHP and MySQL on server side is because of mature frameworks and portable environment setup for different OS - Apache, MySQL and PHP setup – also called AMP setups (Linux: LAMP, Windows: WAMP, MacOS X: MAMP).  For communication with the Arduino we created a PHP prototype that handles the connection to the MySQL database as well as stores the information into the database and visualises it in an HTML website. The address of the website is located at <a href="http://qualoccupy.azurewebsites.net/review_data.php">http://qualoccupy.azurewebsites.net/review_data.php</a>.  The Arduino that the other team is working on will be sending the data on the sensors into the database using HTTP protocols in the form of <a href="http://qualoccupy.azurewebsites.net/add_data.php?parametres&amp;parametres">http://qualoccupy.azurewebsites.net/add_data.php?parametres&amp;parametres</a>, for example. </p>
+
+                                    <p class="section-paragraph">Since the current Azure hosting expires soon and the PHP mock will be transfering, the links provided may expire soon. If that is the case please contact Aleksandar Rusinov on <a href="mailto:aleksandar.rusinov.13@ucl.ac.uk">aleksandar.rusinov.13@ucl.ac.uk</a></p>
+                                    <hr>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="lead section-lead center bold">UI prototype</p>
+                                    <p class="section-paragraph"><big>T</big>he UI prototype was built using Balsamiq wireframe tools and Microsoft PowerPoint. Balsamiq is a user friendly tool that allows the user to create quality mock-up screens of his website/app. You can create and change the content easily. Powerpoint was used to make a presentation showing the action flow of an example scenario.  During the design invention we refer to the  NASDAQ website and Google Nest for reference. NASDAQ has implemented great ideas for viewing a historical data, it is widely used in the investor business and you could get any kind of statistical information about the period ask. Google Nest thermostat application provides current data for the temperature  in the rooms and may say if it is suitable for the user. The idea for using our system on queues came from this model. You can find more about the design and the actual UI in the “Development of the user interface section” of our site.</p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container -->
+                        <hr>
+                        <div class="container-fluid" id="div_7">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Version Control: Git repository</h1>
+                                    <p class="lead section-lead">Due to a non-disclosure  agreement with the UCL and our client the repositories with our code are private. An access to the repositories was provided to our Course Administrator.</p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="lead section-lead center bold">Version Control</p>
+                                    <p class="section-paragraph">Version control is an essential matter in the development life of a project. Let’s say a team start working on a new project. Having only the initial files you all know that their quality and quantity will change a lot during the development. In this period, there are possibilities that mistakes may occur in the system being developed and when these are spotted, we should be able to revert the previous version.  Version control does history of your work and allows moving back and forward between different versions. When linked to a web hosting service you can have many functionalities such as issues, adding of new collaborators,  contributing to open source projects that are on a public repository (often called repo)  and you can interact in more pleasant way with system – not just shell as pure Git with the shell commands.
+                                    There are many tools on the web that provide version control hosting like –  Github, Subversion, Aegis, Mercurial, bazaar, Codeville, other Git hosting services such as Bitbucket and many others. We agreed to use Github because it is a proven standard and it surpasses most of it’s competitors and user experience. Unlike the competitors like Subversion where the developers make changes directly to the files stored in the central repository online, GitHub uses a technique where the files stored in the system are copied into your local repository and you make changes to the local copies of the files and when you’re ready you just publish the copy into the system. Another advantage of using GitHub is a feature called forking. This is where a user can copy another user’s repository on a project that the person’s working on, assuming they have access to it, and make changes in your own local repository then notify the project owner of the changes made and the project owner can then simply merge the files together into the original repository. This makes it much easier for many people to collaborate on a project and why it makes sense for our team to use GitHub. In our project work, we created 2 repositories -   one for the java project and another for the PHP prototype in order to avoid confusion. We used Google drive for documents, reports, minutes and other files because it allows real time mutual collaboration and also has much better in-browser navigation that is absent in Github.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.container -->
+                        <hr>
+                        <div class="container-fluid" id="div_8">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Initial Test Strategies</h1>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="lead section-lead center bold">Java Testing</p>
+                                    <p class="section-paragraph"><strong>JUnit</strong> is the most widely used java testing framework for TDD and unit testing.JUnit is part of the xUnit family  that originates from Smalltalk unit testing framework. As well as the other tools from xUnit The framework makes very stable result checkers and requires knowledge of the language it is for - in that case - Java. We aim to test our java classes using various matchers and application of JUnit and as we integrated JUnit to the project, placed a test skeleton and practiced. </p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="lead section-lead center bold">PHP Testing</p>
+                                    <p class="section-paragraph"><strong>There</strong> are many different tools for PHP Test Driven Development and Quality Assurance. There is PHPUnit  for  unit tests, again part of the xUnit family – the most widely used PHP testing tool having all the  necessary features to properly test your code. Behat – a Behavioral Driven Development framework that allows one to do very readable and easy to comprehend tests – understandable even to people without any technical background. The Tests come in form of scenarios that look like : 
+                                        <pre>Scenario: List 2 files in a directory</br>Given I am in a directory "test"</br>And I have a file named "foo"</br>And I have a file named "bar"</br>When I run "ls"</br>Then I should get:</br>"""</br>bar</br>foo</br>"""
+                                        </pre>
+                                    Then classes are written to process each sentence
+                                        <pre>/** @Given /^I have a file named "([^"]*)"$/ */</br>public function iHaveAFileNamed($file)</br>{</br>   touch($file);</br>}
+                                        </pre>
+                                    Taken from - <a href="http://www.sitepoint.com/8-must-have-php-quality-assurance-tools/">http://www.sitepoint.com/8-must-have-php-quality-assurance-tools</a>
+                                    This pattern matches the  regular expression on the first line and then  runs the appropriate function. 
+                                    <p>
+                                    <p class="section-paragraph"><strong>Another</strong> tools are vfsStream, PHPLOC, PHP CodeSniffer  that are used for mock testing, advanced code analysis that  may be connected with Github and  syntax check. When planning more sophisticated PHP modules the outline tools before will be used for Q&A. </p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="lead section-lead center bold">Testing Simulator</p>
+                                    <p class="section-paragraph"><strong>The PHP simulator</strong> that is implemented emulates the HTTP POST transfer from Arduino processors by sending data over http protocol to the database at random intervals of time. Instead a real information it reads the data from a CSV (comma separated value) files, extracts and sends it to a module that inserts a row into the data table Snapshot. This is to simulate real transfer of data from the sensors.  We had a look at and considered many different simulator and techniques. One of the ideas was to read and write into a JSON file for some time period.  This might be built in Java during term two if necessary. Also if the changes are too rapid we might put the requests in queries. Another option is to put a flag that indicates change in a buffer, storing the current transitions. Polling the flag every 0.1 ms will signal if there is a change and if present an insert to the database will be performed. A test data of each error case outlined in the error module in our “Project modules” section will be made  and test against our  system. This will come  in a set of .csv files.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container -->
+                        <hr>
+                        <div class="container-fluid" id="div_4">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Research</h1>
+                                    <p class="lead section-lead">Each member sets out to research in different aspects of this project, at the same time, we also try to discover effective ways to communicate with our hardware counterpart. The outcome is abundant and very helpful for this system's furthur development.</p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <table border="1" id="research-table">
+                                        <tr>
+                                            <th>NAME</th>
+                                            <th>RESEARCH DONE</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Aleksandar Rusinov</td>
+                                            <td>
+                                                <ul >
+                                                    <li>
+                                                        <p>Read <i>A Survey of Human-Sensing: Methods for Detecting Presence, Count, Location, Track, and Identity about human detection algorithms</i> by Thiago Teixeira, Greshon Dublon, Andreas Savvides</p>
+                                                        <p><a href="http://thiagot.com/papers/teixeira_techrep10_survey_of_human_sensing.pdf">http://thiagot.com/papers/teixeira_techrep10_survey_of_human_sensing.pdf</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Different analysis software:</p>
+                                                        <p><a href="http://www.predictiveanalyticstoday.com/top-15-predictive-analytics-software/">http://www.predictiveanalyticstoday.com/top-15-predictive-analytics-software/</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Done research for the UI based on sites – NASDAQ web site</p>
+                                                        <p><a href="http://www.nasdaq.com/symbol/msft/stock-chart?intraday=off&amp;timeframe=10y&amp;splits=off&amp;earnings=off&amp;movingaverage=None&amp;lowerstudy=volume&amp;comparison=off&amp;index=&amp;drilldown=off">http://www.nasdaq.com/symbol/msft/stock-chart?intraday=off&amp;timeframe=10y&amp;splits=off&amp;earnings=off&amp;movingaverage=None&amp;lowerstudy=volume&amp;comparison=off&amp;index=&amp;rilldown=off</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Google nest</p>
+                                                        <p><a href="https://play.google.com/store/devices/details/Nest_Learning_Thermostat?id=nest_thermostat&amp;hl=en_GB">https://play.google.com/store/devices/details/Nest_Learning_Thermostat?id=nest_thermostat&amp;hl=en_GB</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Room visitor counter with relay control</p>
+                                                        <p>
+                                                        <a href="http://www.instructables.com/id/Room-Visitor-Counter-with-Relay-Control/">http://www.instructables.com/id/Room-Visitor-Counter-with-Relay-Control/</a>
+                                                        <br><a href="http://www.instructables.com/image/F8E8V6THV9HMBIG">http://www.instructables.com/image/F8E8V6THV9HMBIG</a>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Looked Guava Library</p>
+                                                        <p><a href="https://code.google.com/p/guava-libraries/wiki/ServiceExplained">https://code.google.com/p/guava-libraries/wiki/ServiceExplained</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>JSON service for JAVA</p>
+                                                        <p>
+                                                        <a href="http://www.oracle.com/technetwork/articles/java/json-1973242.html">http://www.oracle.com/technetwork/articles/java/json-1973242.html</a>
+                                                        <br><a href="https://code.google.com/p/json-simple/">https://code.google.com/p/json-simple/</a>
+                                                        <br><a href="http://examples.javacodegeeks.com/core-java/json/java-json-parser-example/">http://examples.javacodegeeks.com/core-java/json/java-json-parser-example/</a>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>How to connect arduino with a php server</p>
+                                                        <p><a href="http://www.tweaking4all.com/hardware/arduino/arduino-ethernet-data-push/">http://www.tweaking4all.com/hardware/arduino/arduino-ethernet-data-push/</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>PHP test tools evaluation</p>
+                                                        <p><a href="http://scriptime.blogspot.co.uk/2014/07/performance-test-tools.html">http://scriptime.blogspot.co.uk/2014/07/performance-test-tools.html</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>GrepCode – java code open source search engine</p>
+                                                        <p><a href="http://grepcode.com/">http://grepcode.com/</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Looked at Hadoop</p>
+                                                        <p>
+                                                        <a href="p://wikibon.org/wiki/v/HBase,_Sqoop,_Flume_and_More:_Apache_Hadoop_Defined">p://wikibon.org/wiki/v/HBase,_Sqoop,_Flume_and_More:_Apache_Hadoop_Defined</a>
+                                                        <br><a href="https://www.youtube.com/watch?v=cA2btTHKPMY">https://www.youtube.com/watch?v=cA2btTHKPMY</a>
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dingzhong Weng</td>
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <p>Researched in feasibility of beacon technologies such as iBeacon and gimbal </p>
+                                                        <p>
+                                                        <a href="https://developer.apple.com/ibeacon/">https://developer.apple.com/ibeacon/</a>
+                                                        <br><a href="http://www.gimbal.com/">http://www.gimbal.com/</a>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Open source facial recognition library</p>
+                                                        <p><a href="http://openbiometrics.org/">http://openbiometrics.org/</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Study Java EE 7 Web Application tutorial</p>
+                                                        <p><a href="https://docs.oracle.com/javaee/7/tutorial/index.html">https://docs.oracle.com/javaee/7/tutorial/index.html</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Read <i>A robust occupancy detection and tracking algorithm for the automatic monitoring and commissioning of a building about human detection algorithms</i> by Huang Chia Shih</p>
+                                                        <p><a href="http://www.sciencedirect.com/science/article/pii/S0378778814002989">http://www.sciencedirect.com/science/article/pii/S0378778814002989</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Read <i>A Survey of Human-Sensing: Methods for Detecting Presence, Count, Location, Track, and Identity about human detection algorithms</i> by Thiago Teixeira, Greshon Dublon, Andreas Savvides</p>
+                                                        <p><a href="http://www.eng.yale.edu/enalab/publications/human_sensing_enalabWIP.pdf">http://www.eng.yale.edu/enalab/publications/human_sensing_enalabWIP.pdf</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>A look into Hadoop tutorial</p>
+                                                        <p><a href="https://developer.yahoo.com/hadoop/tutorial/">https://developer.yahoo.com/hadoop/tutorial/</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Study Bootstrap and relating website technologies</p>
+                                                        <p><a href="http://getbootstrap.com">http://getbootstrap.com</a></p>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jetnipat Sarawongsuth</td>
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <p>Researched on Java connection to MySQL</p>
+                                                        <p>
+                                                        <a href="http://www.vogella.com/tutorials/MySQLJava/article.html">http://www.vogella.com/tutorials/MySQLJava/article.html</a>
+                                                        <br><a href="http://dev.mysql.com/doc/connector-j/en/connector-j-usagenotes-connect-drivermanager.html">http://dev.mysql.com/doc/connector-j/en/connector-j-usagenotes-connect-drivermanager.html</a>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Researched on Java connection to a database through XAMPP</p>
+                                                        <p>
+                                                        <a href="http://nodehead.com/java-how-to-connect-to-xampps-mysql-in-eclipse/">http://nodehead.com/java-how-to-connect-to-xampps-mysql-in-eclipse/</a>
+                                                        <br><a href="http://codeforgeek.com/2014/07/java-mysql-connectivity-jdbc/">http://codeforgeek.com/2014/07/java-mysql-connectivity-jdbc/</a>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Researched on Creating a web application and running it on a server</p>
+                                                        <p>
+                                                        <a href="http://wiki.jetbrains.net/intellij/Creating_a_simple_Web_application_and_deploying_it_to_Tomcat">http://wiki.jetbrains.net/intellij/Creating_a_simple_Web_application_and_deploying_it_to_Tomcat</a>
+                                                        <br><a href="http://azure.microsoft.com/en-gb/documentation/articles/virtual-machines-java-run-tomcat-application-server/">http://azure.microsoft.com/en-gb/documentation/articles/virtual-machines-java-run-tomcat-application-server/</a>
+                                                        <br><a href="https://www.youtube.com/watch?v=Av6zh817QEc">https://www.youtube.com/watch?v=Av6zh817QEc</a>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Researched on HTML and PHP Languages</p>
+                                                        <p>
+                                                        <a href="http://www.w3schools.com/php/default.asp">http://www.w3schools.com/php/default.asp</a>
+                                                        <br><a href="http://www.w3schools.com/html">http://www.w3schools.com/html</a>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Researched on making PHP connection to a MySQL database and sending and retrieving data from the database</p>
+                                                        <p>
+                                                        <a href="http://webcheatsheet.com/php/connect_mysql_database.php">http://webcheatsheet.com/php/connect_mysql_database.php</a>
+                                                        <br><a href="http://www.w3schools.com/php/php_mysql_connect.asp">http://www.w3schools.com/php/php_mysql_connect.asp</a>
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <hr>
+                        <!-- /.container -->
+                        <hr>
+                        <div class="container-fluid" id="div_9">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Progress Records</h1>
+                                    <p class="lead section-lead">This section will present every bi-weekly report written so far.</p>
+                                    <p class="section-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <div class="well well-lg">
+                                        <p class="lead section-lead bold">First Bi-weekly report</p>
+                                        <p class="bold center">Aleksandar Rusinov , Jetnipat Sarawongsuth, Dingzhong Weng</p>
+                                        <p class="section-paragraph">We have been assigned a task to create an occupancy predictive engine. Our client is Qualcomm.  We will be closely collaborating with Team 21 which will be working on the hardware side of the project (Project name: Qualcomm Presence with Unifying Signals) while our team, Team 20, will be working on the software side of the project . On 06/10/2014, all of the team members of both teams had a joint client meeting to gather more information about the project.</p>
+                                        <p class="bold center">First Client Meeting (Date: 06/10/14)</p>
+                                        <p>The followings are the items discussed during the client meeting:</p>
+                                        <p>
+                                        <strong>Stretched Goals: </strong>
+                                        <br>
+                                        <ul>
+                                            <li>Using the data we have to control external devices such as light, heater, etc.</li>
+                                        </ul>
+                                        </p>
+                                        <p>
+                                        <strong>Additional Ideas: </strong>
+                                        <br>
+                                        <ul>
+                                            <li>The possibility of using machine learning.</li>
+                                            <li>To start with, using the information obtained from the sensors as well as our own visual observations, train the system to detect the population of the room with the sensors and double check the accuracy of the system from the sensor using our observation.</li>
+                                            <li>Experiment with different sensors and detectors and analyse the accuracy and effectiveness of the data obtained from these sensors before narrowing down the list of sensors to be used</li>
+                                            <li>The effectiveness of using Hadoop.</li>
+                                        </ul>
+                                        </p>
+                                        <p class="section-paragraph bold center">Group Meeting (Date: 07/10/2014)</p>
+                                        <p>We looked through the advantages and disadvantages of using different types of sensors in our project. We decided  to work jointly with the other team on the hardware solutions at first. The following are some of what was discussed: <br>
+                                        <ol>
+                                            <li>IR distance sensors – most suitable and cheap.</li>
+                                            <li>Microwave sensors – relatively cheap but it is still unclear as to whether it will be a convenient way of doing so.</li>
+                                            <li>Laser sensor – very good and precise but expensive, each costing around £300.</li>
+                                            <li>Beacon – enables to track a specific person that is upto 50  metres  from a receiver,  and even up to 100m in open spaces..</li>
+                                        </ol>
+                                        </p>
+                                        <p >We also brainstormed ideas about the data received and how it will be obtained:</p>
+                                        <p >We were discussing about the possibility of mounting an array of IR sensors on top of the two sides of each door pointing vertically downwards so we will receive a signal which notifies the system when an object passes through the sensors. The data will be captured from the IRs with the frequency of 10 per second (860000 per day) and decide if there is a person present.</p>
+                                        <p ><pre>If the person is present we set:
+outer IR as OIR                 (this IR sensor is located on the outside of the door)
+and inner IR as IIR           (this IR sensor is located on the inside of the door)
+If a person walks (abnormal value on the sensors) through OIR and then to IIR  we sent Timestamp for person entering. 
+If a person walks (abnormal value on the sensors) through IIR and then to OIR  we sent timestamp for person exiting.</pre></p>
+                                        <p class="bold">Example of how the data may be stored:</p>
+                                        <pre>SensorValues[]{
+OIR[]
+OIR_TIMESTAMP
+IIR[]
+IIR_TIMESTAMP
+MICROWAVE
+VIDEO
+TIMESTAMP
+}</pre>
+                                        <p class=" bold">Example of simple processing of the data:</p>
+                                        <pre>IF OIR_TIMESTAMP&lt;IIR_TIMESTAMP – ENTERING
+IF OIR_TIMESTAMP &gt; IIR_TIMESTAMP  - EXITING</pre>
+                                        <p class="section-paragraph">We will set a delay limit to a specified figure, for example, 1 minute, so unusual behaviours, such as OIR being triggered but IIR not being triggered within a set timeframe, will be discarded; If one sensor is triggered but not the other within the period of 1 minute, then this will not be recorded onto the system.</p>
+                                        <p>Looked at Hadoop – Two main parts – MapReduce and HDFS (hadoop data file System) with a lot of tools providing different functionalities : <br>
+                                        Hive – allows one to write  queries in  HiveQL – language similar to SQL<br>
+                                        Pig  - Pig Latin – language based on Hadoop can adept at very long data pipelines.<br>
+                                        HBase – non-relational database that allows low-latency lookups in Hadoop<br>
+                                        Flume – enables populating Hadoop with web servers, mobile devices  to  collect data to Hadoop<br>
+                                        Oozie – workflow processing system allowing one to define schedule of jobs written  in multiple languages.<br>
+                                        Ambari –  set of tools that allow the managing of Apache Hadoop clusters.<br>
+                                        Avro - serialization system allowing encoding the schema of Hadoop files.  Good for executing removed procedure calls.<br>
+                                        Sqoop  - moving data from other  kind of data stores into Hadoop (i.e SQL database)<br>
+                                        HCatalog – metadata management<br>
+                                        Mahout -  Data mining library. Performs regression testing ,  clustering and statistical modelling implementing map reduce. (may be important for the predicting engine)<br>
+                                        Tutorials from You Tube - <a href="https://www.youtube.com/watch?v=xWgdny19yQ4">https://www.youtube.com/watch?v=xWgdny19yQ4</a><br>
+                                        Meanwhile, we are learning from previous works. The relating articles are listed as the following:<br>
+                                        <a href="http://www.eng.yale.edu/enalab/publications/human_sensing_enalabWIP.pdf">http://www.eng.yale.edu/enalab/publications/human_sensing_enalabWIP.pdf</a></p>
+                                    </div>
+                                    <!-- /.well -->
+                                    <hr>
+                                </div>
+                                <!-- /.report -->
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <div class="well well-lg">
+                                        <p class="lead section-lead bold">Second Bi-weekly report</p>
+                                        <p class="section-paragraph">Much progress has been made for our team this week. Whilst the other team (Team 21) is still deciding on which sensors they will be using in this project, our team has started writing a basic java program that simulates the input and compute the number of people in rooms. We have taken into account the possibility of each room having more than one door as well as how each room are connected to each other. We have come up with two different approaches that might do the job for us. They will be explained later in this report. We also had another short joint meeting with the client. The minutes of the meeting are shown below.</p>
+                                        <p class="section-paragraph bold center">Client Meeting (Date: 20/10/2014)</p>
+                                        <p class="">This week we clarified to the client about the timeline of the project. Our aim by the end of the first term is to do as much research about the topic as possible as well as creating the first working prototype of the product. We then talked to the client about our progress and kept them up to date about what we are currently working on as well as what we will be working on in the next weeks or so. We raised the idea to our client about the possibility of using buffers to aggregate the data from the sensors then sending them all together at a regular interval. However, the client are reluctant about us using this approach as the data obtained will not be in real time. Later on in the meeting, we went on to discuss the problems that could arise should the current system (having sensors mounted at the doors) fail to detect a person enter or leaving. They raised the question about the effectiveness of this idea and how difficult it could be to error correct and suggested that we use more than one type of sensors. For example, as well as using the doors sensors, we may also use thermal camera to count how many people are in a room or look at how many devices are connected to Wi-Fi. </p><br>
+                                        <p>Considered different approaches and design:
+                                        <p class="bold">First Approach</p>
+                                        Here, the building will be represented as a graph (fig 1) and all the doors are represented by the edges connecting the nodes (room) together. The weight function is on the vertices and it shows the number of people in that room. All the Rooms have their individual IDs that are in strict weak ordering form. There is a buffer that is send every 0.1 second* and it indicates the direction and the number of people passing through each door. If the we receive a signal indicating that someone is passing through a door and it is from the room with higher ID to the room with lower ID, then we assign  -1 to it  and vice versa. This buffer then changes the graph. Tuples with fields containing the time, number of people, etc. will then be sent to relational database every half an hour* for each room.</p>
+                                        <img class="img-responsive img-center" src="images/g1.png" alt="">
+                                        <p class="bold center">Figure 3 Graph Model of a Building</p><br>
+                                        <img class="img-responsive img-center" src="images/g2.png" alt="">
+                                        <p class="bold center">Figure 4 Handling the Message Received from the Sensors</p>
+                                        <p class="bold">Second Approach</p>
+                                        <p>We assign doors as objects with names indicating the rooms they are adjacent to. For example, a door might have a doorID of “F01R12F01R13”. This means that this door connects the room with ID “F01R12” and “F01R13” together. When a person passes through a door, a string is sent in JSON format with the two RoomIDs – “F01R12F01R13”**. This gives us the information on the direction of travel. Now we know that the person is going from the first room “F01R12” to the second “F01R13” and if the person is travelling in the opposite direction the RoomID would be “F01R13F01R12”.</p><br>
+                                        <p class="section-paragraph">This week each of the members of the team has done the following tasks: <br><br>
+                                        <strong>Aleksandar:</strong><br>
+                                        Done sketches of the variants considered.<br>
+                                        Organised meeting between the teams and Steve Hailes.<br>
+                                        Java application:<br>
+                                        Looked at and used JSON processing – JSON simple (<a href="https://code.google.com/p/json-simple/">https://code.google.com/p/json-simple/</a>) and JSON processing API  (<a href="https://jsonp.java.net/">https://jsonp.java.net/</a>)<br>
+                                        Looked at and used Guava: Google Code Library - <a href="https://code.google.com/p/guava-libraries/">https://code.google.com/p/guava-libraries/</a><br>
+                                        Considering Java2D and Swing for the simulation - <a href="http://zetcode.com/gfx/java2d/">http://zetcode.com/gfx/java2d/</a> ,  <a href="http://zetcode.com/tutorials/javaswingtutorial/">http://zetcode.com/tutorials/javaswingtutorial/</a> .<br>
+                                        Started developing Java app for the engine. <br><br>
+                                        <strong>Jetnipat Sarawongsuth:</strong><br>
+                                        Done minutes of meeting with client.<br>
+                                        Looked at Java MySQL API and how to implement it. - <a href="http://www.vogella.com/tutorials/MySQLJava/article.html">http://www.vogella.com/tutorials/MySQLJava/article.html</a><br>
+                                        Wrote a java class file that communicates with MySQL.<br><br>
+                                        <strong>Dingzhong Weng:</strong><br>
+                                        Acquainted the team with Github.<br>
+                                        Done repository for the project.<br>
+                                        Done UML diagrams.<br>
+                                        Done UML Use case and class diagram.<br>
+                                        </p>
+                                        <p style="color:gray;">*The time period might be different.<br>
+                                        ** This may not be the optimal way of representing  the RoomId.</p>
+                                    </div>
+                                    <!-- /.well -->
+                                    <hr>
+                                </div>
+                                <!-- /.report -->
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <div class="well well-lg">
+                                        <p class="lead section-lead bold">Third Bi-weekly report</p>
+                                        <p class="section-paragraph">Over the past week, both teams, team 8 and team 9 have been cooperating and discussing over the data format that our team will receive from the other team. Jetnipat Sarawongsuth was tasked to look at and decide on the different hardware device that can be used to connect the sensors that the other team had been experimenting with. A decision was then made that the sensors are to be connected to an Arduino board version YUN. An Arduino is very easily programmable and is very versatile in nature. Unlike other version of Arduino, Arduino YUN’s board has a built-in Ethernet and WiFi support. This will turn out to be very handy when we are looking at sending the data wirelessly from the Arduino’s sensors to a database when the sensors are interrupted. As an experiment, two IR sensors are to be connected to an Arduino YUN which will then be mounted on top of a door frame. A simple program has been written by the other team that can detect movement when something passes through the IR sensors. Over the next weeks or so, I will be looking into creating a simulator of the floor plan in to test our system and the error  handling module.</p>
+                                        <p class="section-paragraph center bold">Client Meeting (Date: 10/11/2014)</p>
+                                        <p>This week we had another joint meeting with the other team with the client from Qualcomm. We mostly explained to the client the progresses of both teams. The following are what was discussed.</p>
+                                        <p>The other team has been making progresses on Arduino and the IR sensors. They have written a simple piece of code and detects movement when someone walks pass the sensors. However, the data here are not being stored and is sent over the USB cable. In the near future, we will be looking at using Arduino YUN  which will make it possible to send the data from the sensors directly and wirelessly to a computer, database, or a tablet. At the moment, there is a slight issue with the batter power. This means that the IR sensors do not have enough power to cover the whole length of the door. They are still looking into the possibilities of using alternate power source that will provide enough powers to the sensors. The usage of Kinect was also briefly gone over. Kinect could be used as the secondary sensors to the IR sensors. After having discussed that, our group explained in a fair amount of details in what the database structures may look like.  We also explained to the client on how the basic java application that we wrote works as well as explaining to them about the usage of MySQL table as a mean to store data. During the explanation, the clients once again brought up the idea of hardware errors and how our current software might not be able to error correct. They suggested that we have an error correcting module or inconsistency spotters that gives a flag when the data seems incorrect. They introduced the idea of using confidence level when we calculate how many people are in a room by looking at the reliability of the sensors. This could be done by putting weightings on the different sensors. For example, sensors that are not 100% accurate might get a smaller weighting in the result so the result will not be entirely based on the inaccurate sensors. This is something that our group might be looking into implementing at later stage of the development of the application.</p>
+                                        <p class="section-paragraph center bold">Client Meeting (Date: 13/11/2014)</p>
+                                        <p>After a brief meeting on Monday, the client agreed to come to UCL to have a face-to-face meeting with both Qualcomm teams. The meeting started off with the Qualcomm representatives explaining what they had done earlier this year with a Kinect device. They talked about how they were using different software to track hands movement. They used skeleton tracker which track the hands as well as the elbow. This eliminates the problem where the motion tracker would lose the hands when the two hands cross over each other. This is very relevant to our project since the hardware team is also currently working and experimenting on the usage of Kinect as one of the sensors. Instead of tracking the hands, our team is looking at researching and developing a program for Kinect that can be used to track people’s head as they walk through a doorway. The Kinect device will be fitted on top of the doorway. However, since it is a complicated device, the cost is significantly higher than the cost of our other sensors. This was discussed in the meeting and the client suggested that the benefits of using such sensor outweigh the cost of using and operating it so we will continue working with it for the time being. The hardware team also went on to explain their progress on the current Arduino work they have been working on. They showcased the IR sensor working alongside an Arduino and displaying the result on a laptop. As an object cuts through the IR beam, the counter increments and display the total on the laptop. However, there are a few different problems that were presented such as the rate of detection can be slightly slow. Alongside IR sensors, we also talked about using ultrasound as another sensor. This will also be mounted at the entrances to a room. Our group then started explaining our progress on the database as well as the user interface that we have decided to go with. We decided to go with Aleks’ user interface design as it is very practical and informative since it provides a graphical representation of the building plan, the current number of people in each room as well as some statistics and graphs from past data. We showed the client our basic user interface design and they seemed to be pleased with it. The client brought up the idea of the different sensors sending different values for what was supposed to be the same. For example, an ultrasound mounted on door A might not suggest there’s a person passing through but the IR sensors might suggest otherwise. The client asked a question on the reliability of the sensors and which sensors to disregard in such event. To answer this problem, we will be looking into the details in the coming weeks but we briefly explained our solution to this problem. Our solution to this issue is to come up with an algorithm that takes into account the reliability and the preset confidence levels of the each of the sensors and come up with an overall confidence level. Each sensors will carry and confidence level weightings which will be set according to their real life accuracy and reliability. Lastly, we explored over the different ways in which the data from the sensors can be delivered or received. We talked about the two ways in which the data can be sent. The first being event based data. This is when the data is sent automatically every time an event is occurring. For example, a data is sent when the IR sensors detect movement. The second being active data sending. This comes in the two forms of data pushing and pulling whereby a system pushes the data into the database every specified period of time for data pushing and the data is sent only in the event where the database requests it for data pulling.</p>
+                                        <p>During the last lab classes our  team met with the HCI supervisor for  the module. We discussed the user interfaces for our system we made for course work 3.  We agreed to step on the basis of the UI presented by Aleksandar Rusinov. We were given few advices how to enhance  and make it better. Our supervisor recommended checking Google nest Thermostat applications and looking at the interface there.  </p>
+                                        <p class="section-paragraph center bold">Nest learning thermostat UI research report</p>
+                                        <p>Nest learning thermostat is a wi-fi enabled  thermostat that has a lot of different functionalities such as personal scheduling, program choosing and history  viewer.  You can also set and view the temperature remotely from your mobile phone. Also the thermostat allows you to view the recordings of the temperature for  each room for a certain period of time. This functionalities make Google Nest a valuable product to look at  since one of the main goals of our UI will be presenting similarly structured data. </p>
+                                        <table border="1">
+                                            <tr>
+                                                <td><img src="images/i1.png" alt="" class="img-responsive"></td>
+                                                <td>Here is how the temperature in the moment for a specific location is presented. Similarly for our project one may have the number of people instead of the degrees. Depending on how many people are there in a location the color of the circle will indicate how crowded is the space there. There also may be sensors in a queuing place   - café, theatre, cinema, zoo and and a time estimation that says how much time will pass until all the current people have passed. </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="images/i2.png" alt="" class="img-responsive"></td>
+                                                <td>This is how the recorded data is presented in the Nest app.  The energy consumption history is displayed with different variants. We may include the occupancy level when we present the data in one of the future UI mocks.  That is how you can figure out in which hours a place gets crowded usually and not wait a really long queue for hours. </td>
+                                            </tr>
+                                        </table>
+                                        <p class="section-paragraph center bold">Intial PoC Web Design</p>
+                                        <p>Dingzhong Weng will work with Lazlo de Brissac from the hardware team to create initial PoC report on a website. They agree to implement Ruby on Rails as their framwork for entire website development. As for the style of presentation, they have decided to design a simplistic single page website and to section the important aspects of initial PoC, so that the client can have a straight-forward understanding of all the information presented. Also, both team have agreed to share the layout of the website. It will have two navigation button clearly indicating the name of the team, so that the client can directly click and view the respective PoC for the team selected.</p>
+                                        <p class="section-paragraph">Jobs done: <br><br>
+                                        <strong>Aleksandar:</strong><br>
+                                        Looked at Google Nest<br>
+                                        Done accepted UI design<br>
+                                        Construct Tables for the new concept<br>
+                                        Done Proof of Concept draft skeleton <br><br>
+                                        <strong>Jetnipat Sarawongsuth:</strong><br>
+                                        Done minutes of Skype meeting<br>
+                                        Done minutes of general in campus meeting<br>
+                                        Done research for a connection device          <br><br>
+                                        <strong>Dingzhong Weng:</strong><br>
+                                        Done draft for the project site, link: <a href="https://qualcomm.herokuapp.com">https://qualcomm.herokuapp.com</a> (temporary)
+                                        </p>
+                                    </div>
+                                    <!-- /.well -->
+                                    <hr>
+                                </div>
+                                <!-- /.report -->
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <div class="well well-lg">
+                                        <p class="lead section-lead bold">Fourth Bi-weekly report</p>
+                                        <p class="section-paragraph center bold">Progress</p>
+                                        <p>During the last two weeks, we have made much progress and we approached the issues of setting up an online system. During the first week, after migrating from a common Java application to a dynamic web application, we have done research on servlet and we conducted some tests and examples. Unfortunately, the deploying of the Java application on a server took longer than we previously expected so we settled down with a PHP solution that sends the data to the database and displays it. We discussed that issue with our client-Nadine Macrae on Monday and we were able to develop a PHP prototype that satisfies some of our objectives and points that the client mentioned by Friday 28th November. We plan to show it to the client on the next client meeting on Monday 1st December and ask for their feedback and improvement suggestions.</p>
+                                        <p class="section-paragraph center bold">Client Meeting (Date: 17/11/14)</p>
+                                        <p>We had another joint weekly meeting with Qualcomm and we had a discussion on the following subjects. The hardware team had been experimenting with the ultrasound sensors which they had been planning to use and they raised an issue with them but this will be looked at in the coming weeks. Alex’s team uploaded code on github. Also, some fixes on UI design are on schedule. Qualcomm and both team decided that the meetings will hold in two periods in the future. First one at 11 am will be meeting with Alex’s team, and second one at 11:30am will be meeting with Lazlo’s team. Speaking of the UI design, Alex brought up that the team has talked to its supervisor for some advice over the design. Before next meeting, Alex will set up a database for both team to communicate data with. Qualcomm suggested to take a look into REST design pattern. Both team decided to continue researching in ways to communicate the data with.</p>
+                                        <p class="section-paragraph center bold">Client Meeting (Date: 24/11/14)</p>
+                                        <p>Today the hardware and the software teams of Qualcomm project had a Skype meeting with the client, but this time we had separate sessions with each team explaining their progresses on the project. The following is our part of the meeting.
+                                        We started the meeting off by explaining to the client what the team members have been working on over the past weeks. Dingzhong has been working on creating a template for a website for the Proof of Concept part of the project as well as working on the user interface. We briefly talked to the client about the user interface for the project website to monitor the number of people in rooms as well as our approach to colour coding the rooms to give the user the idea of how crowded each room is. Jetnipat has been researching and coding PHP scripts that will allow the data received to be sent to MySQL database as well as the scripts that handle receiving data over a port. Meanwhile, Aleks has been working with Dingzhong on the user interface as well as working more on the simulator. After that, we informed them that due to the time constraint this term, we will not be able to complete the process of having a Java app, which deals with receiving and storing data, running on a server over a virtual machine that we have recently requested to UCL. Thus for now, we will be working with PHP scripts that will work as a replacement instead. We explained to the client that the MySQL will be stored in MS Azure and that the data that we will be receiving from the other team will be sent through SSH socket. The client then suggested that we look at another, possibly, option of sending the data through HTTP instead as the client suggested that it will be easier to work with. The last thing we discussed was how our simulator works. Currently, our simulator simulates only one transition but it is done several times. We then discussed over the fact that our simulator currently is not using SSH socket so the client advised us to use as much code that’s to be used in the real code as possible for the simulator.</p>
+                                        <p class="section-paragraph center bold">Lab Session (Date: 25/11/2014)</p>
+                                        <p>Today in the two-hour lab session, we made some physical progresses in the project. We first set up a database of event snapshot on Microsoft Azure. The event snapshot will contain information about people entering or leaving the room. The table that stores the information contains these fields: doorID, event_time, transition, confidence level. DoorID field stores the string that represent the door that someone has walked through. Event Time stores the date time format of when someone walked through the door. Transition tells us which room the person is walking to. For example, either room 1 to room 2 or room 2 to room 1. Confidence level shows how confident we are that someone has walked through the door. We also set up PHP scripts that deals with data insertion into MySQL events_snapshot table as well as a php script that listens to a port (socket) for data.</p>
+                                        <p class="section-paragraph">Jobs done: <br><br>
+                                        <strong>Aleksandar:</strong><br>
+                                        Researched on ways to implement the simulator on Java (Multi-threading and socket listening).<br>
+                                        Made PHP scripts for the Azure server (http connection that adds a row into the MySQL table and display the table).<br>
+                                        Set up the server on Azure. <br><br>
+                                        <strong>Jetnipat Sarawongsuth:</strong><br>
+                                        Researched on PHP script that deals with sending data to MySQL table and script that deals with data retrieval from a port.<br>
+                                        Conducted minutes of meetings.<br>
+                                        Conducted biweekly report with Aleks.<br>
+                                        Worked on the project during the lab session.<br><br>
+                                        <strong>Dingzhong Weng:</strong><br>
+                                        Working on the Proof of concept website.<br>
+                                        Conducted minute of the meeting (17/11/14).
+                                        </p>
+                                    </div>
+                                    <!-- /.well -->
+                                </div>
+                                <!-- /.report -->
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <div class="well well-lg">
+                                        <p class="lead section-lead bold">Fifth Bi-weekly report</p>
+                                        <p class="section-paragraph center bold">Progress</p>
+                                        <p>During the last two weeks, we  made a progress on creating and finalising the group site and worked on the video as a Proof of Concept work for the project. During the first week, we worked on further developing the PHP simulator and successfully deployed it on azure. After migrating from a common Java application to a dynamic web application, we did some researches on servlet and we conducted some tests and examples. We successfully presented the PHP prototype, the simulator and the mockup user interface to the client during the previous two meetings. The mockup models for our system were further developed. We then looked into the issues about the UI and, through heuristic evaluation, were able to identify multiple problems with the UI including inconsistencies in the words used. Rounding up the first term, we should focus on the PoC for term two and separated issues as outline at the end of the report. </p>
+                                        <p class="section-paragraph center bold">Client Meeting (Date: 01/12/14)</p>
+                                        <p>This Monday, our group had another weekly meeting with the client. We had a representative from the hardware group with us as well in during the meeting. The meeting started off with us explaining our progress that has been made in the last weeks. We explained how our PHP connection to the MySQL database hosted on Microsoft Azure and what it does to our client. The database contains the event snapshot table that stores the information on the events triggered by the sensors. We then sent the client the link to the HTML page that contains the PHP script that store data into the database as well as displaying it in a table on the HTML webpage and asked for their feedback on it. They were pleased to see the data being sent to the event snapshot database through HTTP and the results of the database displayed neatly in a table. We explained the current difficulties with the DateTime format for the date field in the database. After that, we talked about the process of inputting the data into the database. The representative from the other team briefly talked about how they will generate a HTTP link that has all the data regarding an event and that will be stored into the database with the written PHP script. However, as of now, we clarified with the client that we are not able to use Arduino to send the data into our existing event snapshot database since there are certain difficulties with the different fields in the database and the current Arduino program itself. Finally, we sent the client the general layout of the website for the Proof of Concept part of the project. It’s not yet completed. They will get back to us with an email about the feedback for the website at some point during the week.</p>
+                                        <p class="section-paragraph center bold">Client Meeting (Date: 08/12/14)</p>
+                                        <p>Today we had a final meeting with Qualcomm for this term. We told them about the progress made since last week. We showed them the webpages that has got PHP scripts running in the background sending and requesting data. We also showed them the ‘read_simulator’ PHP page. This sends some data acquired from the simulator that was created to the database. The simulator has been improved in that the date and time now will now come from the device. Though right now, it is not currently connected to the Arduino. We are waiting for the hardware team to work on transferring the data from Arduino through HTTP protocols. We later explained to them about a couple of new tables that we decided to create in our database, the first one being the OccupancyLevels table. This table stores the information on how crowded a room is. For example, we might have a label Empty when there is nobody in the room or we can have a label Crowded when there are more than 30 people in a room. We can also have associate colours for each level of crowdedness. Another table is ConfigRoomLimits. This store the information on what action should be done depending on how many people are in the room. For example, we might set a condition in this table for a room to turn the volume of the speakers at a club up if there are more than 20 people in the room between 2AM and 4AM. Finally, we had a discussion over the Proof of Concept website and they were quite pleased with the layout of the page. We will be putting in actual content on the page in the coming days.</p>
+                                        <p class="section-paragraph center bold">Main tasks completed <br><br>
+                                        <table border="1" align="center" valign="center" id="progress-table">
+                                        <tr>
+                                            <th align="center" valign="center">
+                                                <b>Task</b>
+                                            </th>
+                                            <th align="center" valign="center">
+                                                <b>Contributors</b>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Created main  project report  
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Aleksandar Rusinov, Jetnipat Sarawongsuth
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Created Simulators
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Aleksandar Rusinov
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Recorded minutes of meetings
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Dingzhong Weng, Jetnipat Sarawongsuth
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Recorded Video
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Aleksandar Rusinov, Jetnipat Sarawongsuth,
+Dingzhong Weng
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                UI Heuristic Evaluation
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Aleksandar Rusinov
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Set grounds for prediction engine
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Jetnipat Sarawongsuth, Aleksandar Rusinov
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Modules Desciption Elaboration
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Aleksandar Rusinov, Dingzhong Weng
+                                            </td>
+                                        </tr>   
+                                    </table>
+                                        </p>
+                                    </div>
+                                    <!-- /.well -->
+                                </div>
+                                <!-- /.report -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container -->
+                        <hr>
+                        <div class="container-fluid" id="div_10">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1 class="section-heading">Term 2 Development Schedule</h1>
+                                    <p class="lead section-lead">During 2nd term, we will start making more sophisticated software prototypes and will integrate our software with hardware to deliver a functional product.</p>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <p class="section-paragraph"><big>A</big> lot has been done this term. We have created a <strong>Java prototype</strong>, a simulator, a <strong>PHP prototype</strong> and a very basic mockup of the UI. Next term, we will be working on <strong>developing the analysis engine</strong> that will have algorithms that deal with <strong>counting the number of people in a room in a building</strong>, calculate the level of confidence in that number and identify and self-correct the errors that may be encountered. A test data for the error module will be done and stored into a set of .csv files. This will guarantee the stability of the system and will show if a proper treatment handles the edge cases. We will also be working on developing a fully working user interface. We currently have a UI that meets some of the criteria we set for the UI. It has some features such as displaying the historical data in a neat table. However, it still lacks certain functionalities described in the UI prototype. For example, it does not have a login form nor does it have a navigation panel on the option page that takes the user to a different building. Fixing the issues found in the process of the heuristics evaluation of the UI is a priority. We will also be working on <strong>JUnit testing framework as well as testing the PHP codes that has been written this term with PHPUnit</strong> and other Q&A tools. As an additional task should all the tasks above are completed before the deadline, we might also develop a predictive engine which will use an algorithm that predicts the number of people that will be in a room at a given time on a given day. This will require some further research to be done and there will be challenges that we will need to overcome.</p>
+                                </div>
+                                <table border="1" align="center" valign="center" id="progress-table">
+                                        
+                                        <tr>
+                                            <th align="center" valign="center">
+                                                <b>Tasks</b>
+                                            </th>
+                                            <th align="center" valign="center">
+                                                <b>Stage</b>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Java Application
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Elaborated but needs refinement + modules built
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Application Modules Elaboration:
+                                            </td>
+                                            <td align="center" valign="center">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Module 1 – Data initialization 
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Done
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Module 2 – Data  gathering and maintenance
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Partly done on PHP to be implemented in Java
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Module 3 – Procedures and functions for engine
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Term 2
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Module 4 – UI and Reports module
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Designed mock – partly implemented on PHP prototype
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Module 5 – Error module 
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Term 2
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Cross Platform app realization
+                                            </td>
+                                            <td align="center" valign="center">     Would/Term 2
+                                            </td>
+                                        </tr>  
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Predictive engine 
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Enchanced database model present Would/Term 2
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Engine testing with real data from Arduino sensors
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Term 2
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Module testing and refinement
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Term 2
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Java Testing
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Started
+                                            </td>
+                                        </tr>  
+                                        <tr>
+                                            <td align="center" valign="center">
+                                                Php Testing
+                                            </td>
+                                            <td align="center" valign="center">
+                                                Term 2
+                                            </td>
+                                        </tr>                                  
+                                    </table>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.container -->
+
+                    </section>
+                </div>
+                <!-- Content wrapper -->
+                <div id="menu-ico">
+                    <svg id="menu-ico-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                    <path d="M 30, 70 C 30, 70 110, 70 150, 70 C 170, 70 170, 10  80, 70 C 50,90  20,110  20,110" id="top"></path>
+                    <path d="M 30,100 L 160,100" id="middle"></path>
+                    <path d="M 30,130 C 30,130 110,130 150,130 C170,130 170,190  80,130 C 50,110  20, 90  20, 90" id="bottom"></path>
+                    </svg>
+                </div>
+                <!-- menu icon -->
+                <!-- Footer -->
+                <footer>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>Copyright &copy; <a href="https://www.facebook.com/oasis.weng">Dingzhong Weng</a>, <a href="https://www.facebook.com/aleks.roussinov?fref=ts">Aleksandar Roussinov</a>,<a href="https://www.facebook.com/bosssarawongsuth?fref=ts">Jetnipat Sarawongsuth</a>. This web page is intended for COMP2008 System Engineering 1. Presenting team is <strong>Team 8</strong>. 2014</p>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                </footer>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        <!-- #wrapper -->
+        <div id="arrow" class="flip-container vertical">
+            <div class="flipper">
+                <div class="front">
+                    <!-- front content -->
+                    <a href="" id="down"><img src="images/arrow.png" alt=""></a>
+                </div>
+                <div class="back">
+                    <!-- back content -->
+                    <a href="" id="up"><img src="images/arrow_flipped.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <!-- arrow -->
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Menu Toggle Script -->
+        <script src="js/custom.js"></script>
+        <!-- Custom Script -->
+        <script src="js/version-switch.js"></script>
+        <!-- Version Switch Script -->
+
+    </body>
+</html>
